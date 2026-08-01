@@ -107,10 +107,23 @@ body{
     border-color:#C5A059;
 }
 
-.card-icon{
-    font-size:28px;
-    margin-bottom:6px;
-    filter: sepia(80%) hue-rotate(-25deg) saturate(200%) brightness(0.8);
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.card-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* فقط برای آیکون‌های تک‌رنگ (books و diploma-scroll) */
+.card-icon.mono svg {
+    color: #C5A059;
 }
 
 .card h3{
@@ -170,43 +183,51 @@ footer p{
    ========================================== */
 @media (max-width: 768px) {
 
+    html, body {
+    height: 100%;
+    margin: 0;
+}
+
     body {
         align-items: flex-start;
-        background-image: url("images/mobile_background.png");
+        background-image: url("images/mobile-background.png");
         background-size: cover;
+        background-position: center;
         background-attachment: scroll;
         padding: 10px 0;
     }
 
     .container {
-        padding: 12px 12px 20px 12px;
-        margin: 5px auto;
-        width: 88%;
+        padding: 10px 12px 20px 12px;
+        margin: 10px auto;
+        width: 85%;
     }
 
     .hero {
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
 
     .logo {
-        width: 250px;
-        max-width: 80%;
-        margin-top: -25px !important;
-        margin-bottom: -15px !important;
+        width: 260px;
+        max-width: 85%;
+        margin-top: 10px !important;
+        margin-bottom: -20px !important;
         margin-left: auto;
         margin-right: auto;
     }
 
+    /* فاصله متن زیر لوگو */
     .hero p {
-        margin-top: -5px; 
-        font-size: 9.5px;
+        margin-top: 0px; 
+        font-size: 8px;
         line-height: 1.6;
         padding: 0 5px;
     }
 
+    /* بزرگ‌تر کردن تیتر بخش‌های سامانه */
     .menu-box h2 {
-        font-size: 15px;
-        margin-bottom: 10px;
+        font-size: 14px;
+        margin-bottom: 12px;
     }
 
     .cards {
@@ -215,28 +236,36 @@ footer p{
     }
 
     .card {
-        padding: 15px 20px;
+        padding: 10px 40px;
     }
 
     .card-icon {
-        font-size: 22px;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 6px;
+    }
+
+    .card-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* بزرگ‌تر کردن تیتر کارت‌ها برای تناسب با توضیحات */
+    .card h3 {
+        font-size: 13px;
+        font-weight: 700;
         margin-bottom: 4px;
     }
 
-    .card h3 {
-        font-size: 13px;
-        margin-bottom: 2px;
-    }
-
     .card p {
-        font-size: 10px;
+        font-size: 8px;
         min-height: auto;
-        line-height: 1.5;
+        line-height: 1.6;
     }
 
     .card a {
         font-size: 10px; 
-        padding: 3px 12px;
-        margin-top: 6px;
+        padding: 4px 14px;
+        margin-top: 8px;
     }
 }
