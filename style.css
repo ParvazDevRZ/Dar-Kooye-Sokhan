@@ -19,7 +19,6 @@ body{
     background-attachment:fixed;
     color:#333333;
     line-height:1.6;
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -166,19 +165,40 @@ footer p{
     margin:2px 0;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     body {
         align-items: flex-start;
+        background-image: url("images/mobile-background.png");
+        background-size: cover;
+        background-attachment: scroll;
+        padding: 10px 0;
     }
-    .cards {
-        grid-template-columns: 1fr;
-    }
+
     .container {
-        padding: 20px 15px;
+        padding: 25px 15px;
         margin: 10px auto;
         width: 95%;
     }
+
+    .hero {
+        margin-bottom: 30px;
+    }
+
     .logo {
-        width: 240px;
+        width: 280px; 
+        max-width: 90%;
+        margin: 0 auto 10px auto;
+    }
+
+    .hero p {
+        margin-top: 0;
+        font-size: 13px;
+        line-height: 1.8;
+        padding: 0 10px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 }
