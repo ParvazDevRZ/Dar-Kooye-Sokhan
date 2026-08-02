@@ -1,279 +1,557 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
 
+
+
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
+
+
 
 html, body {
+
     min-height: 100vh;
+
 }
+
+
 
 body{
+
     font-family:'Vazirmatn',sans-serif;
+
     direction:rtl;
+
     background-image:url("images/background.png");
+
     background-size:100% 100%;
+
     background-position:center;
+
     background-attachment:fixed;
+
     color:#333333;
+
     line-height:1.6;
+
     display: flex;
+
     align-items: flex-start;
+
     justify-content: center;
+
     padding: 40px 0;
+
 }
+
+
 
 .container{
+
     width:92%;
+
     max-width:1120px;
+
     margin:0 auto;
+
     background:rgba(253, 251, 247, 0.55);
+
     backdrop-filter:blur(8px);
+
     border-radius:24px;
+
     padding: 36px 40px 30px;
+
     border:1px solid rgba(197, 160, 89, 0.3);
+
     box-shadow:0 15px 35px rgba(0, 0, 0, 0.05);
+
 }
+
+
 
 /* لینک بازگشت */
+
 .back-link{
+
     display:inline-block;
+
     color:#1B2A4A;
+
     font-weight:500;
+
     font-size:13px;
+
     text-decoration:none;
+
     border-bottom:1px dashed #C5A059;
+
     padding-bottom:2px;
+
     transition:.3s;
+
 }
+
+
 
 .back-link:hover{
+
     color:#C5A059;
+
 }
+
+
 
 .hero{
+
     text-align:center;
+
     margin:30px 0 45px;
+
 }
+
+
 
 .hero h1{
+
     font-size:26px;
+
     color:#1B2A4A;
+
     margin-bottom:10px;
+
 }
+
+
 
 .hero p{
+
     font-size:14px;
+
     color:#5A5047;
+
     opacity:0.8;
+
     max-width:560px;
+
     margin:0 auto;
+
 }
+
+
 
 .menu-box{
+
     text-align:center;
+
     margin-bottom:20px;
+
 }
+
+
 
 .menu-box h2{
+
     font-size:20px;
+
     color:#1B2A4A;
+
     margin-bottom:15px;
+
     position:relative;
+
     display:inline-block;
+
 }
+
+
 
 .menu-box h2::after{
+
     content:"";
+
     display:block;
+
     width:60%;
+
     height:3px;
+
     margin:5px auto 0;
+
     background:#C5A059;
+
     border-radius:10px;
+
 }
+
+
 
 /* کارت‌های دسته‌بندی (کلاسیک / معاصر) */
+
 .cards{
+
     display:grid;
+
     grid-template-columns:repeat(2, 1fr);
+
     gap:20px;
+
 }
+
+
 
 .card {
+
     background: #ffffff;
+
     border-radius: 16px;
+
     padding: 30px 22px;
+
     border: 1px solid #EFE6D8;
+
     transition: all 0.35s ease;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: space-between;
+
     text-align:center;
+
 }
+
+
 
 .card:hover{
+
     transform:translateY(-4px);
+
     box-shadow:0 10px 22px rgba(27, 42, 74, 0.08);
+
     border-color:#C5A059;
+
 }
+
+
 
 .card h3{
+
     color:#1B2A4A;
+
     margin-bottom:8px;
+
     font-size:19px;
+
 }
+
+
 
 .card p{
+
     color:#666;
+
     font-size:13px;
+
     line-height:1.7;
+
     margin-bottom:16px;
+
 }
+
+
 
 .card a {
+
     display: inline-block;
+
     background: #1B2A4A;
+
     color: #F4EAD4;
+
     text-decoration: none;
+
     padding: 6px 22px;
+
     border-radius: 20px;
+
     transition: .3s;
+
     font-weight: 500;
+
     font-size: 13px;
+
     box-shadow: 0 3px 10px rgba(27, 42, 74, 0.15);
+
 }
+
+
 
 .card a:hover{
+
     background:#C5A059;
+
     color:#1B2A4A;
+
     box-shadow:0 5px 15px rgba(197, 160, 89, 0.3);
+
 }
+
+
 
 /* لیست شاعران (صفحات کلاسیک و معاصر) */
+
 .poet-list{
+
     list-style:none;
+
     display:flex;
+
     flex-direction:column;
+
     gap:10px;
+
     margin-top:20px;
+
     max-width:520px;
+
     margin-left:auto;
+
     margin-right:auto;
+
 }
+
+
 
 .poet-list a{
+
     display:block;
+
     background:#ffffff;
+
     border:1px solid #EFE6D8;
+
     border-radius:12px;
+
     padding:13px 22px;
+
     color:#1B2A4A;
+
     font-weight:500;
+
     font-size:15px;
+
     text-decoration:none;
+
     transition:.3s;
+
 }
+
+
 
 .poet-list a:hover{
+
     border-color:#C5A059;
+
     background:#FBF6EA;
+
     box-shadow:0 6px 16px rgba(197, 160, 89, 0.15);
+
 }
+
+
 
 nav{
+
     text-align:center;
+
     margin-top:35px;
+
 }
+
+
 
 footer{
+
     text-align:center;
+
     margin-top:35px;
+
     color:#888;
+
     font-size:12px;
+
 }
+
+
 
 footer hr{
+
     border:none;
+
     height:1px;
+
     background:#E5DCCF;
+
     margin-bottom:10px;
+
 }
+
+
 
 footer p{
+
     margin:2px 0;
+
 }
+
+
 
 hr{
+
     border:none;
+
     height:1px;
+
     background:#E5DCCF;
+
     margin:20px 0;
+
 }
 
+
+
 /* ==========================================
+
    تنظیمات اختصاصی موبایل
+
    ========================================== */
+
 @media (max-width: 768px) {
 
+
+
     body {
+
         background-image: url("images/mobile-background.png");
+
         background-size: cover;
+
         background-position: center;
+
         background-attachment: scroll;
+
         padding: 15px 0;
+
     }
+
+
 
     .container {
+
         padding: 20px 16px 24px;
+
         margin: 10px auto;
+
         width: 90%;
+
     }
+
+
 
     .hero{
+
         margin:15px 0 30px;
+
     }
+
+
 
     .hero h1{
+
         font-size:19px;
+
     }
+
+
 
     .hero p{
+
         font-size:11px;
+
         padding:0 6px;
+
     }
+
+
 
     .menu-box h2{
+
         font-size:15px;
+
     }
+
+
 
     .cards{
+
         grid-template-columns: 1fr;
+
         gap:14px;
+
     }
+
+
 
     .card{
+
         padding:20px 18px;
+
     }
+
+
 
     .card h3{
+
         font-size:15px;
+
     }
+
+
 
     .card p{
+
         font-size:11px;
+
     }
+
+
 
     .card a{
+
         font-size:11px;
+
         padding:5px 18px;
+
     }
 
+
+
     .poet-list a{
+
         font-size:12px;
+
         padding:11px 16px;
+
     }
+
 }
