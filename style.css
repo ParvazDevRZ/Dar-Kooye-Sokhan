@@ -166,42 +166,74 @@ footer p{
 }
 
 @media (max-width: 768px) {
+
     body {
         align-items: flex-start;
         background-image: url("images/mobile-background.png");
         background-size: cover;
         background-attachment: scroll;
-        padding: 0;
+        padding: 10px 0;
     }
 
     .container {
-        padding: 0px 15px 25px 15px;
-        margin: 0 auto;
-        width: 95%;
+        padding: 0px 12px 20px 12px;
+        margin: 5px auto;
+        width: 88%;
     }
 
     .hero {
-        margin-bottom: 25px;
+        margin-bottom: 15px;
     }
 
     .logo {
-        width: 250px; 
-        max-width: 85%;
-        margin-top: -35px !important;   
-        margin-bottom: -20px !important;
+        width: 210px;
+        max-width: 80%;
+        margin-top: -25px !important;
+        margin-bottom: -15px !important;
         margin-left: auto;
         margin-right: auto;
     }
 
     .hero p {
         margin-top: -5px; 
-        font-size: 9.5px;
-        line-height: 1.8;
-        padding: 0 10px;
+        font-size: 9px;
+        line-height: 1.6;
+        padding: 0 5px;
+    }
+
+    .menu-box h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
     }
 
     .cards {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 12px 14px;
+    }
+
+    .card-icon {
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+
+    .card p {
+        font-size: 10.5px; 
+        min-height: auto;
+        line-height: 1.5;
+    }
+
+    .card a {
+        font-size: 10px; 
+        padding: 3px 12px;
+        margin-top: 6px;
     }
 }
