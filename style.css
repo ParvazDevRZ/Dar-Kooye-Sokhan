@@ -179,6 +179,211 @@ footer p{
 }
 
 /* ==========================================
+   عناصر مشترک زیرصفحات (گنجینه شاعران و صفحات شاعر)
+   ========================================== */
+
+.back-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #1B2A4A;
+    background: #F4EAD4;
+    padding: 6px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-top: 26px;
+    margin-bottom: 22px;
+    transition: .3s;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+}
+
+.back-pill:hover {
+    background: #C5A059;
+    color: #fff;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 30px;
+}
+
+.page-title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.title-flourish {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 14px;
+    color: #C5A059;
+    opacity: .65;
+}
+
+.page-title {
+    font-size: 26px;
+    color: #1B2A4A;
+    font-weight: 800;
+    margin: 0;
+}
+
+.page-subtitle {
+    font-size: 13.5px;
+    color: #5A5047;
+    opacity: .8;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* فهرست شاعران (کلاسیک / معاصر) */
+.poet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.poet-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #EFE6D8;
+    border-radius: 14px;
+    padding: 18px 10px;
+    text-decoration: none;
+    color: #1B2A4A;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.poet-chip:hover {
+    transform: translateY(-3px);
+    border-color: #C5A059;
+    background: #FBF6EB;
+    box-shadow: 0 8px 18px rgba(27, 42, 74, 0.08);
+}
+
+.poet-chip svg {
+    width: 20px;
+    height: 20px;
+    color: #C5A059;
+}
+
+.poet-chip .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #F8F1E0, #EFE6D8);
+    border: 1.5px solid #C5A059;
+    color: #1B2A4A;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+/* صفحه‌ی اختصاصی هر شاعر */
+.poet-portrait-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.poet-portrait {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #F4EAD4;
+    box-shadow: 0 10px 25px rgba(27, 42, 74, 0.1);
+    background: linear-gradient(135deg, #F8F1E0, #EFE6D8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poet-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.poet-portrait svg {
+    display: none;
+    width: 46px;
+    height: 46px;
+    color: #C5A059;
+    opacity: .7;
+}
+
+.poet-portrait.no-photo svg {
+    display: block;
+}
+
+.poet-name {
+    text-align: center;
+    font-size: 23px;
+    color: #1B2A4A;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.poet-tagline {
+    text-align: center;
+    font-size: 13.5px;
+    color: #5A5047;
+    opacity: .85;
+    max-width: 480px;
+    margin: 0 auto 34px;
+    line-height: 1.9;
+}
+
+.poet-section {
+    margin-bottom: 28px;
+}
+
+.poet-section h2 {
+    font-size: 16.5px;
+    color: #1B2A4A;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.poet-section h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #C5A059;
+    border-radius: 10px;
+    margin-top: 2px;
+}
+
+.poet-section p {
+    font-size: 14px;
+    color: #444;
+    line-height: 2;
+    text-align: justify;
+}
+
+.poet-nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ==========================================
    تنظیمات اختصاصی موبایل
    ========================================== */
 @media (max-width: 768px) {
@@ -267,5 +472,77 @@ footer p{
         font-size: 10px; 
         padding: 4px 14px;
         margin-top: 8px;
+    }
+
+    /* زیرصفحات (گنجینه شاعران و صفحات شاعر) در موبایل */
+    .page-header {
+        padding-top: 10px;
+        margin-bottom: 22px;
+    }
+
+    .page-title {
+        font-size: 18px;
+    }
+
+    .title-flourish {
+        width: 34px;
+        height: 10px;
+    }
+
+    .page-title-wrap {
+        gap: 8px;
+        margin-bottom: 6px;
+    }
+
+    .page-subtitle {
+        font-size: 11px;
+        padding: 0 8px;
+    }
+
+    .back-pill {
+        font-size: 10px;
+        padding: 5px 12px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+    .poet-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .poet-chip {
+        font-size: 11px;
+        padding: 12px 6px;
+    }
+
+    .poet-chip .avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .poet-portrait {
+        width: 110px;
+        height: 110px;
+    }
+
+    .poet-name {
+        font-size: 17px;
+    }
+
+    .poet-tagline {
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+
+    .poet-section h2 {
+        font-size: 13px;
+    }
+
+    .poet-section p {
+        font-size: 11px;
+        line-height: 1.9;
     }
 }
