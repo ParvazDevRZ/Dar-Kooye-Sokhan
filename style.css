@@ -175,8 +175,8 @@ footer p{
     }
 
     .container {
-        padding: 15px 15px 25px 15px;
-        margin: 15px auto;
+        padding: 5px 15px 25px 15px;
+        margin: 10px auto;
         width: 95%;
     }
 
@@ -187,12 +187,12 @@ footer p{
     .logo {
         width: 250px; 
         max-width: 85%;
-        margin: 10px auto -15px;
+        margin: -15px auto -15px;
     }
 
     .hero p {
-        margin-top: -10;
-        font-size: 10.5px;
+        margin-top: -5px; 
+        font-size: 9.5px;
         line-height: 1.8;
         padding: 0 10px;
     }
