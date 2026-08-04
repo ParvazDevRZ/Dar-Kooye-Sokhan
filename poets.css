@@ -555,3 +555,276 @@ hr{
     }
 
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    background-image: url("images/background.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333333;
+    line-height: 1.8;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.container {
+    width: 92%;
+    max-width: 880px;
+    margin: 0 auto;
+    background: rgba(253, 251, 247, 0.55);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    padding: 36px 50px 30px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+/* ========== دکمهٔ بازگشت ========== */
+.back-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #1B2A4A;
+    background: #F4EAD4;
+    padding: 6px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-bottom: 28px;
+    transition: .3s;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+}
+
+.back-pill:hover {
+    background: #C5A059;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+}
+
+/* ========== هدر شاعر ========== */
+.poet-header {
+    text-align: center;
+    margin-bottom: 42px;
+    padding: 24px 20px 20px;
+    background: linear-gradient(135deg, rgba(244, 234, 212, 0.4), rgba(255, 255, 255, 0.2));
+    border-radius: 20px;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.poet-ornament-top {
+    margin-bottom: 16px;
+}
+
+.poet-ornament-top svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+.poet-name {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1B2A4A;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.poet-tagline {
+    font-size: 14px;
+    color: #5A5047;
+    opacity: 0.85;
+    line-height: 2;
+    max-width: 540px;
+    margin: 0 auto 18px;
+}
+
+.poet-ornament-bottom svg {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}
+
+/* ========== محتوای اصلی ========== */
+.poet-content {
+    padding: 0 10px;
+}
+
+.poet-section {
+    margin-bottom: 32px;
+}
+
+.poet-section h2 {
+    font-size: 18px;
+    color: #1B2A4A;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #EFE6D8;
+}
+
+.section-icon {
+    width: 22px;
+    height: 22px;
+    color: #C5A059;
+}
+
+.poet-section p {
+    font-size: 14.5px;
+    color: #444;
+    line-height: 2.1;
+    text-align: justify;
+}
+
+/* ========== قاب ابیات ========== */
+.verse-box {
+    background: #ffffff;
+    border: 1px solid #EFE6D8;
+    border-radius: 14px;
+    padding: 18px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(27, 42, 74, 0.04);
+    transition: .3s;
+}
+
+.verse-box:hover {
+    border-color: #C5A059;
+    box-shadow: 0 6px 18px rgba(197, 160, 89, 0.12);
+}
+
+.verse-line {
+    font-size: 15.5px;
+    color: #1B2A4A;
+    font-weight: 500;
+    line-height: 2.2;
+    text-align: center;
+    margin: 4px 0;
+}
+
+/* ========== فوتر ========== */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+    font-size: 12px;
+}
+
+footer hr {
+    border: none;
+    height: 1px;
+    background: #E5DCCF;
+    margin-bottom: 12px;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* ========== موبایل ========== */
+@media (max-width: 768px) {
+    
+    body {
+        background-image: url("images/mobile-background.png");
+        background-size: cover;
+        background-attachment: scroll;
+        padding: 15px 0;
+        align-items: flex-start;
+    }
+
+    .container {
+        width: 88%;
+        padding: 20px 18px 24px;
+        margin: 10px auto;
+    }
+
+    .back-pill {
+        font-size: 10px;
+        padding: 5px 14px;
+        margin-bottom: 18px;
+    }
+
+    .poet-header {
+        padding: 18px 14px 14px;
+        margin-bottom: 26px;
+    }
+
+    .poet-ornament-top {
+        margin-bottom: 10px;
+    }
+
+    .poet-ornament-top svg {
+        max-width: 200px;
+    }
+
+    .poet-name {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .poet-tagline {
+        font-size: 11px;
+        line-height: 1.8;
+        margin-bottom: 12px;
+    }
+
+    .poet-ornament-bottom svg {
+        max-width: 70px;
+    }
+
+    .poet-content {
+        padding: 0 4px;
+    }
+
+    .poet-section {
+        margin-bottom: 22px;
+    }
+
+    .poet-section h2 {
+        font-size: 14px;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .section-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .poet-section p {
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    .verse-box {
+        padding: 14px 16px;
+        margin-bottom: 12px;
+    }
+
+    .verse-line {
+        font-size: 12.5px;
+        line-height: 2;
+    }
+
+    footer {
+        margin-top: 28px;
+        font-size: 10px;
+    }
+}

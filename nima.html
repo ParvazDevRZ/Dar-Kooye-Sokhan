@@ -1,71 +1,146 @@
 <!DOCTYPE html>
-<html lang="fa">
-
+<html lang="fa" dir="rtl">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>نیما یوشیج</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نیما یوشیج | در کوی سخن</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    min-height: 100vh;
+    background: url('images/background.png') center center / cover no-repeat fixed;
+    color: #1B2A4A;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 40px 16px;
+  }
+  @media (max-width: 768px) {
+    body { background: url('images/mobile-background.png') center top / cover no-repeat; background-attachment: scroll; padding: 20px 10px; }
+  }
+  .container {
+    width: 100%; max-width: 820px;
+    background: rgba(253,251,247,0.55);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(197,160,89,0.35);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(27,42,74,0.13);
+    padding: 48px 52px 36px;
+  }
+  @media (max-width: 768px) { .container { padding: 24px 16px 20px; } }
+  .back-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #F4EAD4; border: 1.5px solid #C5A059;
+    border-radius: 20px; padding: 6px 18px;
+    color: #1B2A4A; text-decoration: none; font-size: 14px;
+    margin-bottom: 28px; transition: background .2s;
+  }
+  .back-pill:hover { background: #e8d9b8; }
+  .deco-top { display: block; margin: 0 auto 12px; }
+  .poet-name-box {
+    background: linear-gradient(135deg, #fffdf7, #f9f3e3);
+    border: 2px solid #C5A059;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(197,160,89,0.15);
+    padding: 18px 32px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .poet-name-box h1 { font-family: 'Sahel', serif; font-size: 38px; color: #1B2A4A; }
+  @media (max-width: 768px) { .poet-name-box h1 { font-size: 24px; } .poet-name-box { padding: 12px 16px; } }
+  .deco-bottom { display: block; margin: 8px auto 20px; }
+  .tagline { text-align: center; color: #7a6a4a; font-size: 15px; margin-bottom: 32px; line-height: 1.9; }
+  @media (max-width: 768px) { .tagline { font-size: 13px; } }
+  .poet-section { margin-bottom: 28px; }
+  .poet-section h2 {
+    font-family: 'Sahel', serif; font-size: 20px; color: #1B2A4A;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1.5px solid rgba(197,160,89,0.4);
+    padding-bottom: 8px; margin-bottom: 14px;
+  }
+  .poet-section h2 svg { width: 22px; height: 22px; flex-shrink: 0; }
+  @media (max-width: 768px) { .poet-section h2 { font-size: 16px; } .poet-section h2 svg { width: 18px; height: 18px; } }
+  .poet-section p, .poet-section li { font-size: 15px; line-height: 2.2; color: #2C2C2C; }
+  @media (max-width: 768px) { .poet-section p, .poet-section li { font-size: 13px; } }
+  .poet-section ul { padding-right: 20px; }
+  .poem-box {
+    background: rgba(197,160,89,0.08);
+    border-right: 3px solid #C5A059;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px; margin-top: 8px;
+  }
+  .poem-text { font-size: 15px; line-height: 2.4; color: #2C2C2C; text-align: right; white-space: pre-line; }
+  .poem-source { font-size: 12px; color: #888; margin-top: 10px; text-align: left; }
+  @media (max-width: 768px) { .poem-text { font-size: 13px; } }
+  footer {
+    margin-top: 36px; text-align: center;
+    font-size: 12px; color: #7a6a4a; line-height: 2;
+    border-top: 1px solid rgba(197,160,89,0.3); padding-top: 16px;
+  }
+  @media (max-width: 768px) { footer { font-size: 11px; margin-top: 20px; } }
+</style>
 </head>
-
 <body>
+<div class="container">
+  <a href="modern.html" class="back-pill">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    بازگشت به شاعران معاصر
+  </a>
 
-<header>
+  <svg class="deco-top" width="220" height="28" viewBox="0 0 220 28">
+    <path d="M10 14 Q55 4 110 14 Q165 24 210 14" stroke="#C5A059" stroke-width="1.5" fill="none"/>
+    <circle cx="10" cy="14" r="4" fill="#C5A059" opacity=".7"/>
+    <circle cx="110" cy="14" r="5" fill="#C5A059" opacity=".9"/>
+    <circle cx="210" cy="14" r="4" fill="#C5A059" opacity=".7"/>
+  </svg>
 
+  <div class="poet-name-box">
     <h1>نیما یوشیج</h1>
-    <p>
-    نیما یوشیج از برجسته‌ترین شاعران معاصر ایران و بنیان‌گذار شعر نو فارسی است.
-    </p>
-    <hr>
+  </div>
 
-</header>
-<main>
-    <section>
-    <h2>📖 زندگینامه</h2>
+  <svg class="deco-bottom" width="180" height="20" viewBox="0 0 180 20">
+    <line x1="0" y1="10" x2="180" y2="10" stroke="#C5A059" stroke-width="1" opacity=".5"/>
+    <circle cx="90" cy="10" r="5" fill="#C5A059" opacity=".8"/>
+  </svg>
 
-    <p>
-    علی اسفندیاری، مشهور به <strong>نیما یوشیج</strong>، در سال ۱۲۷۶ هجری شمسی در روستای یوش از توابع مازندران دیده به جهان گشود. او از بزرگ‌ترین شاعران معاصر ایران و بنیان‌گذار <strong>شعر نو فارسی</strong> به شمار می‌رود. نیما پس از تحصیل در تهران، با نگاهی تازه به شعر فارسی، قالب‌ها و شیوه‌های سنتی را دگرگون کرد و راهی نو در ادبیات معاصر گشود. آثار او بیشتر به طبیعت، زندگی مردم، مسائل اجتماعی و احساسات انسانی می‌پردازند. نیما یوشیج در سال ۱۳۳۸ هجری شمسی در شهر تهران درگذشت و بعدها بنا به وصیتش، پیکر او به زادگاهش، روستای یوش، منتقل و در همان‌جا به خاک سپرده شد.
-    </p>
-    </section>
+  <p class="tagline">از برجسته‌ترین شاعران معاصر ایران و بنیان‌گذار شعر نو فارسی</p>
 
-    <section>
-    <h2>📚 آثار</h2>
+  <section class="poet-section">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      زندگینامه
+    </h2>
+    <p>علی اسفندیاری، مشهور به «نیما یوشیج»، در سال ۱۲۷۶ هجری شمسی در روستای یوش از توابع مازندران دیده به جهان گشود. او از بزرگ‌ترین شاعران معاصر ایران و بنیان‌گذار شعر نو فارسی به شمار می‌رود. نیما پس از تحصیل در تهران، با نگاهی تازه به شعر فارسی، قالب‌ها و شیوه‌های سنتی را دگرگون کرد و راهی نو در ادبیات معاصر گشود. آثار او بیشتر به طبیعت، زندگی مردم، مسائل اجتماعی و احساسات انسانی می‌پردازند. نیما یوشیج در سال ۱۳۳۸ هجری شمسی در شهر تهران درگذشت و بعدها بنا به وصیتش، پیکر او به زادگاهش، روستای یوش، منتقل و در همان‌جا به خاک سپرده شد.</p>
+  </section>
 
-    <p>
-    مهم‌ترین آثار نیما یوشیج <strong>افسانه</strong>، <strong>ققنوس</strong>، <strong>مانلی</strong>، <strong>خانهٔ سریویلی</strong> و <strong>دیوان اشعار</strong> هستند. در میان این آثار، منظومهٔ <strong>افسانه</strong> مهم‌ترین اثر او به شمار می‌رود و آغازگر جریان شعر نو فارسی محسوب می‌شود. آثار نیما تأثیر عمیقی بر نسل‌های بعدی شاعران، از جمله احمد شاملو، سهراب سپهری و فروغ فرخزاد، گذاشت.
-    </p>
-    </section>
-    <hr>
-    <nav>
+  <section class="poet-section">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      آثار
+    </h2>
+    <p>مهم‌ترین آثار نیما یوشیج «افسانه»، «ققنوس»، «مانلی»، «خانهٔ سریویلی» و «دیوان اشعار» هستند. در میان این آثار، منظومهٔ «افسانه» مهم‌ترین اثر او به شمار می‌رود و آغازگر جریان شعر نو فارسی محسوب می‌شود. آثار نیما تأثیر عمیقی بر نسل‌های بعدی شاعران، از جمله احمد شاملو، سهراب سپهری و فروغ فرخزاد، گذاشت.</p>
+  </section>
 
-        <h3>
-            <a href="modern.html">⬅ بازگشت به شاعران معاصر</a>
-        </h3>
+  <section class="poet-section">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C5A059" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      اشعار نمونه
+    </h2>
+    <div class="poem-box">
+      <p class="poem-text">آی آدم‌ها که بر ساحل نشسته شاد و خندانید!
+یک نفر در آب دارد می‌سپارد جان
+یک نفر دارد که دست و پای دائم می‌زند
+روی این دریای تند و تیره و سنگین که می‌دانید</p>
+      <p class="poem-source">— از شعر «آی آدم‌ها»</p>
+    </div>
+  </section>
 
-    </nav>
-
-</main>
-
-<footer>
-
-    <hr>
-
-    <p>
-        طراحی و توسعه: <strong>ریحانه زارع</strong>
-    </p>
-
-    <p>
-        پروژه درس ادبیات فارسی | تابستان ۱۴۰۵
-    </p>
-
-    <p>
-        © تمامی حقوق این پروژه محفوظ است.
-    </p>
-
-</footer>
-
+  <footer>
+    طراحی و توسعه: ریحانه زارع<br>
+    پروژه درس ادبیات فارسی | تابستان ۱۴۰۵<br>
+    © تمامی حقوق این پروژه محفوظ است.
+  </footer>
+</div>
 </body>
-
 </html>
