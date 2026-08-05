@@ -1,67 +1,83 @@
 <!DOCTYPE html>
-<html lang="fa">
-
+<html lang="fa" dir="rtl">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>هم‌روح کدام شاعری؟</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>🪞 هم‌روحِ کدام شاعری؟</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;800;900&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>
+<div class="container personality-page">
 
-    <h1>🪞 هم‌روحِ کدام شاعری؟</h1>
+    <main class="personality-main">
 
-    <p>
-        با پاسخ دادن به چند پرسش، کشف کنید شخصیت و نگاه شما به زندگی
-        به کدام شاعر فارسی نزدیک‌تر است.
-    </p>
+        <!-- بخش تیترها (روی صفحه شیشه‌ای) -->
+        <div class="title-section-glass">
+            <!-- آینه رنگی -->
+            <div class="personality-icon-wrapper">
+                <img src="images/noto--mirror.svg" alt="آینه" class="personality-icon" />
+            </div>
 
-    <hr>
+            <!-- تزئینات کنار تیتر (مثل فهرست شاعران، اما با کلاس اختصاصی) -->
+            <div class="personality-title-wrap">
+                <div class="p-title-flourish">
+                    <span class="p-line"></span>
+                    <span class="p-diamond">✦</span>
+                    <span class="p-line"></span>
+                </div>
+                <h1 class="personality-title">هم‌روح کدام شاعری؟</h1>
+                <div class="p-title-flourish">
+                    <span class="p-line"></span>
+                    <span class="p-diamond">✦</span>
+                    <span class="p-line"></span>
+                </div>
+            </div>
 
-</header>
+            <p class="personality-subtitle">
+                شخصیت تو در آیینۀ شعر کدام شاعر بزرگ را می‌تاباند؟
+            </p>
+        </div>
 
+        <!-- بخش کارت سفید -->
+        <div class="white-action-card">
+            <div class="personality-description">
+                <p>
+                     اگر دوست دارید بدانید شخصیتتان بیشتر به کدام شاعر فارسی شباهت دارد، 
+                     کافی است به <strong>۱۰ پرسش</strong> کوتاه پاسخ دهید. 
+                     این آزمون با توجه به جواب‌های شما، نتیجه‌ای جالب و متفاوت نشان می‌دهد 
+                     و شاعر نزدیک‌تر به روحیه و سلیقه‌تان را معرفی می‌کند.
+                </p>
 
-<main>
+                <div class="personality-meta">
+                    <span>⏱ زمان: ۳ تا ۵ دقیقه</span>
+                    <span class="meta-sep">•</span>
+                    <span>📖 ۱۰ سوال الهام‌بخش</span>
+                </div>
+            </div>
 
-<section>
+            <a href="test.html" class="btn-start">
+                <span>شروع آزمون</span>
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
 
-<h2>✨ تست شخصیت ادبی</h2>
+    </main>
 
-<p>
-به هر پرسش پاسخ دهید تا در پایان متوجه شوید شخصیت شما به کدام شاعر فارسی نزدیک‌تر است.
-</p>
+    <footer>
+        <hr />
+        <p>طراحی و توسعه: <strong>ریحانه زارع</strong></p>
+        <p>پروژه درس ادبیات فارسی | تابستان ۱۴۰۵</p>
+        <p>© تمامی حقوق این پروژه محفوظ است.</p>
+    </footer>
 
-
-
-
-</section>
-
-</main>
-
-<footer>
-
-    <hr>
-
-    <p>
-        طراحی و توسعه: <strong>ریحانه زارع</strong>
-    </p>
-
-    <p>
-        پروژه درس ادبیات فارسی | تابستان ۱۴۰۵
-    </p>
-
-    <p>
-        © تمامی حقوق این پروژه محفوظ است.
-    </p>
-
-</footer>
-
+</div>
 
 </body>
-
 </html>
