@@ -13,7 +13,7 @@
 # 🖼️ Project Preview
 
 <p align="center">
-  <img src="assets/images/screenshot.png" width="850" alt="Dar Kooye Sokhan Homepage">
+  <img src="images/screenshot.png" width="850" alt="Dar Kooye Sokhan Homepage">
 </p>
 
 ---
