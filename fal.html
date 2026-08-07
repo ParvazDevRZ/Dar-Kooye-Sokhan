@@ -1,74 +1,405 @@
 <!DOCTYPE html>
-<html lang="fa">
-
+<html lang="fa" dir="rtl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فال ادبی</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .fal-page .container { position: relative !important; padding-top: 40px !important; padding-bottom: 30px !important; }
 
-<title>فال ادبی</title>
-<link rel="stylesheet" href="style.css">
+        /* لوگوی طومار */
+        .fal-icon-wrapper { display: flex; justify-content: center; margin-top: 30px; margin-bottom: 10px; }
+        .fal-icon { width: 56px; height: 56px; color: #C5A059; display: block; }
 
+        /* دکمه بازگشت به خانه */
+        .back-pill-top-home {
+            position: absolute !important;
+            top: 24px !important;
+            right: 24px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            background: rgba(253, 250, 245, 0.8) !important;
+            border: 1px solid rgba(197, 160, 89, 0.4) !important;
+            border-radius: 30px !important;
+            padding: 6px 16px !important;
+            color: #1B2A4A !important;
+            text-decoration: none !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+            z-index: 20 !important;
+        }
+        .back-pill-top-home:hover {
+            background: #F4EAD4 !important;
+            border-color: #C5A059 !important;
+            transform: translateX(-3px) !important;
+        }
+        .back-pill-arrow { font-size: 14px; line-height: 1; display: inline-block; }
+
+        /* =========================================== */
+        /* ۱. بخش لیست فال (قبل از کلیک) */
+        /* =========================================== */
+        .fal-list-view { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 800px; margin: 0 auto; }
+
+        .fal-white-card {
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 40px;
+            width: 100%;
+            border: 1px solid #EFE6D8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-top: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(27, 42, 74, 0.08);
+        }
+
+        /* کادر طلایی دور متن راهنما */
+        .fal-guide-wrapper {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            border-radius: 20px;
+            padding: 12px 20px;
+            background: rgba(253, 251, 247, 0.2);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+        .fal-guide-text {
+            font-size: 0.95rem;
+            color: #5A5047;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .btn-fal {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1B2A4A;
+            color: #F4EAD4;
+            text-decoration: none;
+            padding: 12px 45px;
+            border-radius: 50px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(27, 42, 74, 0.15);
+        }
+        .btn-fal:hover {
+            background: #C5A059;
+            color: #1B2A4A;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4);
+        }
+        .btn-fal svg { width: 18px; height: 18px; color: #F4EAD4; }
+        .btn-fal:hover svg { color: #1B2A4A; }
+
+        /* =========================================== */
+        /* ۲. بخش نتیجه فال (بعد از کلیک) */
+        /* =========================================== */
+        .fal-detail-view { display: none; flex-direction: column; align-items: center; width: 100%; max-width: 800px; margin: 0 auto; }
+
+        .fal-result-white-card {
+            background: #ffffff;
+            border-radius: 30px;
+            padding: 40px;
+            width: 100%;
+            border: 1px solid #EFE6D8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(27, 42, 74, 0.08);
+        }
+
+        .fal-result-title-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 5px;
+        }
+        .fal-result-flourish {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #C5A059;
+        }
+        .fal-result-flourish .fl-line {
+            width: 30px;
+            height: 1px;
+            background: #C5A059;
+            opacity: 0.6;
+        }
+        .fal-result-flourish .fl-diamond {
+            font-size: 16px;
+        }
+
+        .fal-result-name {
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: #1B2A4A;
+            margin: 0;
+        }
+
+        .fal-result-poem {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            color: #1B2A4A;
+            font-style: italic;
+            padding: 15px;
+            background: #FBFBFB;
+            border-radius: 16px;
+            border: 1px solid #EFE6D8;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .fal-result-meaning {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+            background: #FBF6EB;
+            padding: 16px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* دکمه بازگشت به صفحه فال (در صفحه نتیجه) */
+        .back-fal-list-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #F4EAD4;
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            border-radius: 20px;
+            padding: 6px 16px;
+            color: #1B2A4A;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: .3s;
+            margin-bottom: 15px;
+        }
+        .back-fal-list-btn:hover {
+            background: #C5A059;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .fal-page .container { padding: 50px 15px 20px 15px !important; }
+            .back-pill-top-home { top: 15px !important; right: 15px !important; font-size: 11px !important; padding: 4px 10px !important; }
+            .fal-white-card, .fal-result-white-card { padding: 20px 15px; }
+            .fal-result-poem { font-size: 0.8rem; }
+            .fal-result-meaning { font-size: 0.8rem; }
+            .fal-guide-text { font-size: 0.8rem; }
+            .fal-guide-wrapper { max-width: 100%; }
+            .btn-fal { padding: 10px 30px; font-size: 0.8rem; }
+            .btn-fal svg { width: 16px; height: 16px; }
+            .fal-icon { width: 40px; height: 40px; }
+            .fal-icon-wrapper { margin-top: 20px; }
+            .fal-result-flourish .fl-line { width: 15px; }
+            .fal-result-flourish .fl-diamond { font-size: 12px; }
+            .fal-result-name {font-size: 1rem !important; }
+            .back-fal-list-btn {font-size: 0.75rem !important; padding: 4px 12px !important; gap: 4px !important; margin-top:15px; }
+    
+    /* اگر می‌خواهید فلش کنار متن هم کوچک‌تر شود */
+    .back-fal-list-btn svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+<div class="container fal-page">
 
-<h1>📖 فال ادبی</h1>
+    <!-- دکمه بازگشت به خانه -->
+    <a href="index.html" class="back-pill-top-home">
+        <span class="back-pill-arrow">→</span>
+        <span>بازگشت به خانه</span>
+    </a>
 
-<p>
-امروز ببین کدام بیت، حال و هوای دلت را روایت می‌کند...
-</p>
+    <!-- تیتر و لوگوی طومار -->
+    <div class="title-section-glass">
+        <div class="fal-icon-wrapper">
+            <svg class="fal-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12.61 8.41a5.5 5.5 0 0 1-1.454-.424A60 60 0 0 1 15.61 4.43l.1-.07l.06-.11a2.924 2.924 0 0 0-.765-3.496a2.92 2.92 0 0 0-3.459-.376l-.126.133A55 55 0 0 1 6.512 6.41a50 50 0 0 1-6.018 4.592L.1 11.25v.23a4.53 4.53 0 0 0 .7 3.655A2.83 2.83 0 0 0 3.007 16a2 2 0 0 0 1.778-.902C5.03 14.79 6.85 12.49 8.79 10.39c.268.464.476 1.003.594 1.575a6.3 6.3 0 0 1-.399 3.078L10.67 13L12 14a12.1 12.1 0 0 0-.584-3.336a5.3 5.3 0 0 0-.915-1.214c.406.346.871.643 1.372.874c.94.338 1.989.572 3.076.672L14 9.73L16 8a9 9 0 0 1-2.777.431q-.324 0-.642-.022zm-.45-7.23a1.9 1.9 0 0 1 .842-.194c.506 0 .966.196 1.309.516a1.93 1.93 0 0 1 .595 2.192c-.486.307-2.346 1.717-4.146 3.307a2 2 0 0 0-.668-1.298a1.6 1.6 0 0 0-1.24-.372A58 58 0 0 0 12.16 1.18M2.7 11.81a.46.46 0 0 1 .262-.082l.04.002h.068c.179.052.334.142.461.261l-.871.719a1.3 1.3 0 0 1-.119-.716a.33.33 0 0 1 .158-.183zM4 14.5a1 1 0 0 1-1.005.499a1.85 1.85 0 0 1-1.485-.54a3.43 3.43 0 0 1-.583-1.922q.001-.377.077-.73l.706-.457c-.094.14-.164.304-.199.481a3 3 0 0 0 .535 1.958l.354.44l1.7-1.4a2.4 2.4 0 0 1-.106 1.685zm.86-2.45a2.83 2.83 0 0 0-1.54-1.274c-.071-.012-.13-.016-.19-.016s-.119.004-.177.01a1.6 1.6 0 0 0-.35 0a45 45 0 0 0 3.988-3.052c.398.071.812.25 1.131.533c.297.313.48.739.48 1.209l-.002.094a54 54 0 0 0-3 3.506a2.8 2.8 0 0 0-.357-1.023z" />
+            </svg>
+        </div>
+        <div class="page-title-wrap" style="flex-direction: column !important;">
+            <div class="title-flourish"><span class="line"></span><span class="diamond">✦</span><span class="line"></span></div>
+            <h1 class="page-title">فال ادبی</h1>
+            <div class="title-flourish"><span class="line"></span><span class="diamond">✦</span><span class="line"></span></div>
+        </div>
+        <p class="page-subtitle" style="margin-top: 8px;">امروز ببین کدام بیت، حال و هوای دلت را روایت می‌کند...</p>
+    </div>
 
-<hr>
 
-</header>
+    <!-- =========================================== -->
+    <!-- بخش لیست فال (دکمه + متن راهنما) -->
+    <!-- =========================================== -->
+    <div id="listView" class="fal-list-view">
+        <div class="fal-white-card">
+            
+            <!-- متن راهنما با کادر طلایی -->
+            <div class="fal-guide-wrapper">
+                <p class="fal-guide-text">
+                    در دل بیت‌های شاعران، پاسخ سوالات امروزت نهفته است.<br>
+                    برای یافتن پیامت، فقط کافیست یک بار کلیک کنی.
+                </p>
+            </div>
 
-<main>
+            <button id="falBtn" class="btn-fal">
+                <span>دریافت فال</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12,2 15,9 22,11 15,13 12,20 9,13 2,11 9,9" />
+                </svg>
+            </button>
+        </div>
+    </div>
 
-<section>
 
-<button id="falBtn">
-🌸 دریافت فال
-</button>
+    <!-- =========================================== -->
+    <!-- بخش نتیجه فال (وقتی فال گرفته می‌شود) -->
+    <!-- =========================================== -->
+    <div id="detailView" class="fal-detail-view">
+        
+        <!-- دکمه بازگشت به صفحه فال -->
+        <a href="fal.html" class="back-fal-list-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            بازگشت به صفحه فال
+        </a>
 
-</section>
+        <div class="fal-result-white-card">
+            
+            <!-- تزئینات گل در دو طرف نام شاعر -->
+            <div class="fal-result-title-wrap">
+                <div class="fal-result-flourish">
+                    <span class="fl-line"></span>
+                    <span class="fl-diamond">✦</span>
+                    <span class="fl-line"></span>
+                </div>
+                <h2 class="fal-result-name" id="detailPoetName">فال امروز از حافظ</h2>
+                <div class="fal-result-flourish">
+                    <span class="fl-line"></span>
+                    <span class="fl-diamond">✦</span>
+                    <span class="fl-line"></span>
+                </div>
+            </div>
 
-<br>
+            <p class="fal-result-poem" id="detailPoem"></p>
+            <p class="fal-result-meaning" id="detailMeaning"></p>
+        </div>
+    </div>
 
-<section>
+    <footer style="margin-top:30px;">
+        <hr>
+        <p>طراحی و توسعه: <strong>ریحانه زارع</strong></p>
+        <p>پروژه درس ادبیات فارسی | تابستان ۱۴۰۵</p>
+        <p>© تمامی حقوق این پروژه محفوظ است.</p>
+    </footer>
+</div>
 
-<h2 id="poetName"></h2>
+<!-- اسکریپت مدیریت صفحات و آدرس‌های URL -->
+<script>
+    const falList = [
+        { poet: "مولانا", poem: `هر کسی کو دور ماند از اصل خویش\nباز جوید روزگار وصل خویش`, meaning: "شاید این روزها احساس می‌کنی چیزی در زندگی کم است؛ وقتش رسیده دوباره به آرزوها و چیزهایی که واقعاً دوستشان داری برگردی." },
+        { poet: "مولانا", poem: `چون شمع باش، که بسوزی و جهان را روشن کنی\nنه چون خس، که با هر بادی به هر سو روی`, meaning: "امروز از ثبات و استقامت خودت استفاده کن. تو نور دیگران باش، نه بازیچه‌ی شرایط." },
+        { poet: "مولانا", poem: `دل اگر خسته شد از راه، بگو\nتا بگویم که سفر تازه شود`, meaning: "اگر از یک مسیر خسته شده‌ای، نترس. تغییر مسیر و شروع دوباره، همیشه یک گزینه‌ی عالی است." },
+        { poet: "حافظ", poem: `صلاح کار کجا و من خراب کجا\nببین تفاوت ره از کجاست تا به کجا`, meaning: "خودت را با دیگران مقایسه نکن؛ هر کسی مسیر مخصوص خودش را دارد." },
+        { poet: "حافظ", poem: `در راه عشق، گر سر و جان ببازی\nباختنی است که سودایی دارد`, meaning: "برای رسیدن به چیزی که واقعاً دوستش داری، باید فداکاری کنی. این باخت، ارزشمندترین پیروزی تو خواهد بود." },
+        { poet: "حافظ", poem: `یار در خانه و من در طلبش\nهمه جا گشتم و او بود کنار`, meaning: "چیزی که دنبالش هستی، شاید خیلی به تو نزدیک‌تر از آن چیزی باشد که فکر می‌کنی." },
+        { poet: "سعدی", poem: `بنی‌آدم اعضای یکدیگرند\nکه در آفرینش ز یک گوهرند`, meaning: "امروز اگر بتوانی حال یک نفر را بهتر کنی، احتمالاً حال خودت هم بهتر خواهد شد." },
+        { poet: "سعدی", poem: `گفته‌اند که عقل و عشق در یک جا جمع نشوند\nمن می‌گویم که اگر عقل نباشد، عشق راه را گم می‌کند`, meaning: "برای تصمیمات بزرگ امروزت، هم به صدای قلبت گوش بده، هم به عقلت." },
+        { poet: "سعدی", poem: `چو درویش بینی، مده توشه‌اش\nکه داند که فردا که خواهد شدش`, meaning: "امروز فرصتی خوب برای بخشش و کمک به دیگران است. هیچ‌کس نمی‌داند فردا چه پیش می‌آید." },
+        { poet: "فردوسی", poem: `توانا بود هر که دانا بود\nز دانش دل پیر برنا بود`, meaning: "امروز یاد گرفتن یک چیز جدید می‌تواند مسیر آینده‌ات را تغییر دهد." },
+        { poet: "فردوسی", poem: `چو ایران نباشد تن من مباد\nاگر تن نباشد، تنم را چه غم؟`, meaning: "به ارزش‌های اصلی و وطن خودت پایبند باش. این اصالت، هویت توست." },
+        { poet: "فردوسی", poem: `از آن‌ها که در جنگ، سخت آمدند\nجوانان مردی شدند و زنند`, meaning: "امروز شاید با چالشی روبرو بشوی. با شجاعت و مردانگی با آن روبرو شو." },
+        { poet: "خیام", poem: `این قافله عمر عجب می‌گذرد\nدریاب دمی که با طرب می‌گذرد`, meaning: "بیش از حد نگران آینده نباش؛ از امروزت هم لذت ببر." },
+        { poet: "خیام", poem: `ای دل، تو به راز بقا پی نبری\nکه این همه راز، در دل خاک است`, meaning: "قبول کن که همه چیز قابل درک نیست. از زندگی لذت ببر و به رازهایش احترام بگذار." },
+        { poet: "خیام", poem: `دلهای کسانی که با تو هستند را دریاب\nکه دنیا با آنها زیباست`, meaning: "امروز قدر اطرافیانت را بدان. آنها نعمت‌های بزرگ زندگی تو هستند." },
+        { poet: "سهراب سپهری", poem: `چشم‌ها را باید شست\nجور دیگر باید دید`, meaning: "شاید مسئله‌ای که ذهنت را درگیر کرده فقط به یک زاویه دید تازه نیاز داشته باشد." },
+        { poet: "سهراب سپهری", poem: `صدای آب را بشنو\nکه تنهایی را می‌شوید`, meaning: "یک قدم از هیاهوی روزمره دور شو. در سکوت و طبیعت، پاسخی برای نگرانی‌هایت پیدا خواهی کرد." },
+        { poet: "سهراب سپهری", poem: `نگاه کن به دشت، آنجا بهار\nبی انتظار است`, meaning: "امروز به دنبال بهار نباش. اگر آرام بگیری، بهار خودش به سراغت می‌آید." },
+        { poet: "فروغ فرخزاد", poem: `تنها صداست که می‌ماند`, meaning: "از بیان احساساتت نترس؛ گاهی یک حرف صادقانه بیشتر از سکوت ارزش دارد." },
+        { poet: "فروغ فرخزاد", poem: `یادت باشد، کسی که به تو می‌گوید نمی‌توانی\nشاید فقط نتوانسته است`, meaning: "امروز فرصتی است برای اثبات خودت. باور داشته باش که از هر محدودیتی فراتر می‌روی." },
+        { poet: "نیما یوشیج", poem: `خانه‌ام ابری است`, meaning: "اگر امروز حالت خوب نیست، یادت باشد هیچ ابری همیشگی نیست." },
+        { poet: "نیما یوشیج", poem: `از لابه‌لای غبار، دیدن خورشید را یاد بگیر\nکه کار هر کسی نیست`, meaning: "مشکلات به تو یاد می‌دهند چگونه در سخت‌ترین شرایط هم امیدوار باشی." },
+        { poet: "شهریار", poem: `آمدی جانم به قربانت ولی حالا چرا`, meaning: "گاهی باید احساساتت را زودتر بیان کنی؛ فرصت‌ها همیشه منتظر نمی‌مانند." },
+        { poet: "شهریار", poem: `دیروز که دیده‌ام در آینه، موهایم را\nفهمیدم که عمری گذشت و تو نبودی`, meaning: "به خودت نگاهی بینداز. آیا چیزهایی هست که برایشان وقت نگذاشته‌ای؟ امروز شروع کن." },
+        { poet: "پروین اعتصامی", poem: `دانش چو چراغ روشن است`, meaning: "دانش و آگاهی همیشه بهترین سرمایه‌ای است که می‌توانی برای خودت بسازی." },
+        { poet: "پروین اعتصامی", poem: `اگر در دل، آفتاب مهربانی نتابد\nجهان همیشه در سردی و تاریکی می‌ماند`, meaning: "مهربانی کن. با یک لبخند یا یک کمک کوچک، می‌توانی روز کسی را روشن کنی." },
+        { poet: "صائب تبریزی", poem: `هر جا که هستی، یک خورشید درونت در حال طلوع است\nکافی است پرده‌ها را کنار بزنی`, meaning: "امروز می‌توانی یک شروع جدید داشته باشی. پتانسیل‌های نهفته‌ی خودت را باور کن." },
+        { poet: "عطار نیشابوری", poem: `ذره ذره‌ی وجودت پر از نور است\nاگر خودت بگذاری`, meaning: "به خودت شک نداشته باش. تو سرشار از نور و توانمندی هستی." },
+        { poet: "نظامی گنجوی", poem: `گلی که از باغ عشق چیده می‌شود\nهرگز پژمرده نمی‌شود`, meaning: "امروز اگر عشق بورزی، نتیجه‌اش برای همیشه در دلت خواهد ماند." },
+        { poet: "بیدل دهلوی", poem: `پشت هر سؤال، جهانی از معنا پنهان است\nآن را جست‌وجو کن`, meaning: "کنجکاو باش. پرسیدن یک سؤال درست، نصف راه رسیدن به جواب است." }
+    ];
 
-<p id="poem"></p>
+    function handleRouting() {
+        const params = new URLSearchParams(window.location.search);
+        const poetId = params.get('poet');
+        const listView = document.getElementById('listView');
+        const detailView = document.getElementById('detailView');
 
-<p id="meaning"></p>
+        if (poetId) {
+            // فال تصادفی انتخاب می‌شود
+            const randomIndex = Math.floor(Math.random() * falList.length);
+            const fal = falList[randomIndex];
 
-</section>
+            listView.style.display = 'none';
+            detailView.style.display = 'flex';
 
-</main>
+            document.getElementById('detailPoetName').innerHTML = `فال امروز از ${fal.poet}`;
+            document.getElementById('detailPoem').innerHTML = fal.poem.replace(/\n/g, "<br>");
+            document.getElementById('detailMeaning').innerHTML = `<strong>✨ برداشت امروزی:</strong><br><br>${fal.meaning}`;
+        } else {
+            listView.style.display = 'flex';
+            detailView.style.display = 'none';
+        }
+    }
 
-<footer>
+    // رویداد کلیک روی دکمه دریافت فال
+    document.getElementById('falBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        // تغییر URL به صورت تصادفی (هر بار یک شاعر تصادفی انتخاب می‌شود)
+        const randomPoet = falList[Math.floor(Math.random() * falList.length)].poet;
+        window.history.pushState({}, '', `?poet=${randomPoet}`);
+        handleRouting();
+    });
 
-<hr>
+    // رویداد کلیک روی دکمه بازگشت به صفحه فال
+    document.querySelector('.back-fal-list-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.history.pushState({}, '', window.location.pathname);
+        handleRouting();
+    });
 
-<p>
-طراحی و توسعه: <strong>ریحانه زارع</strong>
-</p>
-
-<p>
-پروژه درس ادبیات فارسی | تابستان ۱۴۰۵
-</p>
-
-<p>
-© تمامی حقوق این پروژه محفوظ است.
-</p>
-
-</footer>
-
-<script src="fal.js"></script>
+    // اجرای اولیه هنگام لود شدن صفحه
+    window.addEventListener('DOMContentLoaded', handleRouting);
+</script>
 
 </body>
-
 </html>

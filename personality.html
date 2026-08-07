@@ -13,10 +13,35 @@
     <!-- فقط این بخش اضافه شده تا تیتر و دکمه در موبایل کوچک شوند -->
     <style>
         @media (max-width: 768px) {
+
+            .personality-icon {
+            width: 42px !important;
+            height: 42px !important;
+            margin-top: 10px;
+            margin-bottom:10px;
+        }
             .personality-title {
-                font-size: 1.1rem !important;
+                font-size: 1.5rem !important;
                 white-space: nowrap !important;
+                margin-bottom:-5px;
+                margin-top: -5px;
             }
+            .personality-subtitle {
+            font-size: 0.8rem !important;
+            margin-bottom: -10px;
+            margin-top: 10px;
+        }
+
+        .personality-description p {
+            font-size: 0.85rem !important;
+            margin-top:10px;
+            margin-bottom:20px;
+        }
+
+        .personality-meta {
+            font-size: 0.6rem !important;
+            white-space: nowrap !important;
+        }
             .btn-start {
                 font-size: 0.7rem !important;
                 padding: 6px 20px !important;

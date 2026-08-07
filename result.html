@@ -41,18 +41,37 @@
             .container { padding: 50px 16px 20px; }
         }
         
-        /* اصلاح دکمه بازگشت (سمت راست بالا) */
+        /* ==========================================
+           اصلاح دکمه بازگشت (هماهنگ با سایر صفحات)
+           ========================================== */
         .back-pill-top {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: inline-flex; align-items: center; gap: 6px;
-            background: #F4EAD4; border: 1.5px solid rgba(197, 160, 89, 0.4);
-            border-radius: 20px; padding: 6px 16px;
-            color: #1B2A4A; text-decoration: none; font-size: 14px;
-            transition: .3s; z-index: 10;
+            position: absolute !important;
+            top: 24px !important;
+            right: 24px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            background: rgba(253, 250, 245, 0.8) !important; /* پس‌زمینه کرم شفاف */
+            border: 1px solid rgba(197, 160, 89, 0.4) !important;
+            border-radius: 30px !important;
+            padding: 6px 16px !important;
+            color: #1B2A4A !important;
+            text-decoration: none !important; /* حذف خط زیر */
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+            z-index: 20 !important;
         }
-        .back-pill-top:hover { background: #e8d9b8; }
+        .back-pill-top:hover {
+            background: #F4EAD4 !important;
+            border-color: #C5A059 !important;
+            transform: translateX(-3px) !important;
+        }
+        .back-pill-arrow {
+            font-size: 14px !important;
+            line-height: 1 !important;
+            display: inline-block !important;
+        }
         
         /* تیتر اصلی */
         .result-header-glass {
@@ -84,7 +103,6 @@
             opacity: 0.6;
         }
 
-        /* تیتر الماس (✦) دارد */
         .result-flourish .r-diamond {
             font-size: 14px;
         }
@@ -100,7 +118,7 @@
         }
 
         .result-tagline {
-            font-size: 1.1rem;
+            font-size: 0.8rem;
             color: #1B2A4A;
             font-weight: 400;
             margin: 0 0 15px 0;
@@ -142,17 +160,16 @@
             background: #C5A059;
             opacity: 0.6;
         }
-        /* تزئینات کنار اسم شاعر الان دایره (•) است */
         .poet-flourish .p-diamond {
             font-size: 16px;
             line-height: 0;
         }
 
-        /* فونت نام شاعر: ساحل و کمی کوچک‌تر */
+        /* فونت نام شاعر: ساحل */
         .result-poet-name {
             font-family: 'Sahel', 'Vazirmatn', sans-serif;
             font-weight: 800;
-            font-size: 1.8rem; /* کاهش سایز فونت */
+            font-size: 1.8rem;
             color: #1B2A4A;
             margin: 0;
             background: transparent; 
@@ -205,19 +222,19 @@
             border: 1px solid rgba(197,160,89,0.15);
         }
 
-        /* دکمه آزمون دوباره (کوچک‌تر و سرمه‌ای) */
+        /* دکمه آزمون دوباره */
         .btn-retake {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #1B2A4A; /* تغییر رنگ به سرمه‌ای */
-            color: #F4EAD4; /* رنگ متن کرم */
+            background: #1B2A4A;
+            color: #F4EAD4;
             text-decoration: none;
-            padding: 8px 25px; /* پدینگ کمتر */
+            padding: 8px 25px;
             border-radius: 50px;
             font-family: 'Vazirmatn', sans-serif;
             font-weight: 700;
-            font-size: 0.9rem; /* سایز فونت کوچک‌تر */
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             box-shadow: 0 3px 10px rgba(27, 42, 74, 0.15);
             margin-top: 10px;
@@ -236,11 +253,12 @@
         }
 
         @media (max-width: 768px) {
-            .back-pill-top { top: 10px; right: 10px; font-size: 12px; padding: 4px 12px; }
-            .result-title { font-size: 1.8rem; }
+            .back-pill-top { top: 15px !important; right: 15px !important; font-size: 11px !important; padding: 4px 10px !important; }
+            .result-title { 
+        font-size: 1.8rem !important; white-space: nowrap !important; }
             .result-flourish .r-line { width: 20px; }
             .result-white-card { padding: 25px 20px; }
-            .result-poet-name { font-size: 1.5rem; }
+            .result-poet-name { font-size: 1.45rem; }
             .poet-flourish .p-line { width: 20px; }
             .result-poet-desc { font-size: 0.95rem; }
             .btn-retake { padding: 6px 20px; font-size: 0.85rem; }
@@ -251,10 +269,10 @@
 <body>
 <div class="container">
 
-    <!-- دکمه بازگشت (سمت راست بالا) -->
+    <!-- دکمه بازگشت (سمت راست بالا، اصلاح شده) -->
     <a href="personality.html" class="back-pill-top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B2A4A" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-        بازگشت به صفحه معرفی
+        <span class="back-pill-arrow">→</span>
+        <span>بازگشت به صفحه معرفی</span>
     </a>
 
     <!-- بخش هدر -->
@@ -279,7 +297,7 @@
     <!-- بخش کارت سفید -->
     <section class="result-white-card">
         
-        <!-- اسم شاعر با تزئینات کنارش (با دایره) و فونت ساحل -->
+        <!-- اسم شاعر با تزئینات کنارش -->
         <div class="result-poet-wrap">
             <div class="poet-flourish">
                 <span class="p-line"></span>

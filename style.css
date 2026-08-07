@@ -681,15 +681,19 @@ footer p{
 }
 
 .personality-icon {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .personality-title-wrap {
     flex-direction: column !important;
     gap: 2px !important;
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .p-title-flourish {
@@ -700,6 +704,8 @@ footer p{
     gap: 6px !important;
     width: 100% !important;
     color: #C5A059;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .p-title-flourish .p-line {
@@ -763,7 +769,7 @@ footer p{
     background: #FBF6EB;
     padding: 10px 20px;
     border-radius: 50px;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: #5A5047;
     display: flex;
     justify-content: center; 
@@ -789,7 +795,7 @@ footer p{
     border-radius: 50px;
     font-family: 'Vazirmatn', sans-serif;
     font-weight: 700;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
 }
