@@ -4,8 +4,10 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Project-Persian%20Literature-1B2A4A?style=for-the-badge">
-  <img src="https://img.shields.io/badge/HTML5-CSS3-JavaScript-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Responsive-Web%20Design-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge">
 </p>
 
 ---
@@ -48,7 +50,7 @@ A database containing information about **12 classical Persian poets**, includin
 - Cultural and philosophical perspectives
 - Contributions to Persian literature
 
-This section introduces users to the timeless figures who shaped Persian poetry and culture.
+This section introduces the timeless figures who shaped Persian poetry and culture.
 
 ---
 
@@ -70,7 +72,7 @@ This section represents the evolution of Persian literature from classical tradi
 
 ## An Interactive Literary Personality Experience
 
-The most interactive feature of the website.
+The main interactive feature of the website.
 
 Users answer a series of personality-based questions, and the system analyzes their responses to determine which Persian poet is closest to their personality, mindset, and emotional characteristics.
 
@@ -197,10 +199,8 @@ Dar-Kooye-Sokhan
 │   ├── personality-test/
 │   └── fortune/
 │
-└── assets/
-    ├── images/
-    ├── icons/
-    └── fonts/
+└── images/
+    └── screenshot.png
 ```
 
 ---
@@ -225,6 +225,12 @@ Interested in:
 - Artificial Intelligence
 - Creative Technology Projects
 - Building meaningful digital experiences
+
+---
+
+# 📜 License
+
+This project is currently developed for educational and portfolio purposes.
 
 ---
 
