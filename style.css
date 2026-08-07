@@ -964,3 +964,94 @@ footer p{
         font-size: 1rem;
     }
 }
+/* Today page elegant poet logos */
+.today-poet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+    margin: 26px 0 12px;
+}
+
+.today-poet-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(197, 160, 89, 0.32);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(244, 234, 212, 0.42));
+    color: #1B2A4A;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(27, 42, 74, 0.06);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.today-poet-button:hover,
+.today-poet-button:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(197, 160, 89, 0.72);
+    box-shadow: 0 12px 26px rgba(197, 160, 89, 0.18);
+    outline: none;
+}
+
+.today-poet-button.is-active {
+    border-color: #C5A059;
+    background: linear-gradient(135deg, rgba(197, 160, 89, 0.18), rgba(255, 255, 255, 0.78));
+}
+
+.today-poet-logo {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    color: #9A6B22;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(197, 160, 89, 0.26);
+}
+
+.today-poet-logo svg {
+    width: 30px;
+    height: 30px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.today-result-card {
+    padding: 20px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(197, 160, 89, 0.24);
+}
+
+.today-result-row {
+    margin-bottom: 16px;
+}
+
+.today-result-row:last-child {
+    margin-bottom: 0;
+}
+
+.today-result-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #9A6B22;
+    font-weight: 800;
+}
+
+.today-result-card > .today-poet-logo {
+    margin: 0 auto 14px;
+}
+
+.today-result-row {
+    display: block;
+}
