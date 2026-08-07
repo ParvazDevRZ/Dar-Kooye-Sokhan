@@ -2,119 +2,198 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>گنجینه شاعران پارسی</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        .poets-page.container {
+            position: relative !important;
+        }
+
+        /* دکمه بازگشت - مشابه نمونه تصویر */
+        .back-pill-top-home {
+            position: absolute !important;
+            top: 24px !important;
+            right: 24px !important;
+            left: auto !important;
+
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 7px;
+
+            background: rgba(248, 241, 225, 0.72);
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            border-radius: 999px;
+            padding: 7px 18px;
+
+            color: #1B2A4A;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.7;
+            white-space: nowrap;
+
+            box-shadow: 0 6px 18px rgba(27, 42, 74, 0.06);
+            transition: all 0.25s ease;
+            z-index: 20;
+        }
+
+        .back-pill-top-home:hover {
+            background: rgba(248, 241, 225, 0.95);
+            border-color: rgba(197, 160, 89, 0.75);
+            color: #1B2A4A;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(27, 42, 74, 0.10);
+        }
+
+        .back-pill-arrow {
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1;
+            transform: translateY(-1px);
+        }
+
+        /* لوگوی کتاب */
+        .poets-icon-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .poets-icon {
+            width: 64px;
+            height: 64px;
+            color: #C5A059;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .back-pill-top-home {
+                top: 16px !important;
+                right: 14px !important;
+                left: auto !important;
+
+                font-size: 11px;
+                padding: 5px 13px;
+                gap: 5px;
+            }
+
+            .back-pill-arrow {
+                font-size: 13px;
+            }
+
+            .title-section-glass {
+                padding-top: 58px;
+            }
+
+            .poets-icon {
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container poets-page">
 
-<a href="index.html" class="back-pill">→ بازگشت به خانه</a>
-
-<header class="page-header">
-
-    <div class="page-title-wrap">
-        <svg class="title-flourish" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 14"><path d="M0 7 H22" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M30 2 L34 7 L30 12 L26 7 Z" fill="currentColor"/><path d="M38 7 H60" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
-        <h1 class="page-title">گنجینه شاعران پارسی</h1>
-        <svg class="title-flourish" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 14"><path d="M0 7 H22" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M30 2 L34 7 L30 12 L26 7 Z" fill="currentColor"/><path d="M38 7 H60" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
-    </div>
-
-    <p class="page-subtitle">
-        شاعران فارسی را بر اساس دوره‌ی تاریخی آن‌ها مشاهده کنید
-    </p>
-
-</header>
-
-<main>
-
-<section class="menu-box">
-
-<h2>دسته‌بندی شاعران</h2>
-
-<div class="cards">
-
-    <div class="card">
-
-        <div class="card-icon mono">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <rect x="3" y="3" width="18" height="2.2" fill="currentColor"/>
-                <rect x="4.5" y="6.5" width="2" height="12" fill="currentColor"/>
-                <rect x="8.5" y="6.5" width="2" height="12" fill="currentColor"/>
-                <rect x="12.5" y="6.5" width="2" height="12" fill="currentColor"/>
-                <rect x="16.5" y="6.5" width="2" height="12" fill="currentColor"/>
-                <rect x="2.5" y="19.5" width="19" height="2.2" fill="currentColor"/>
-            </svg>
-        </div>
-
-        <h3>شاعران کلاسیک</h3>
-
-        <p>
-            شاعران برجسته از آغاز ادبیات فارسی تا پایان دوره‌ی کلاسیک
-        </p>
-
-        <a href="classic.html">
-            مشاهده فهرست
+        <!-- دکمه بازگشت به خانه -->
+        <a href="index.html" class="back-pill-top-home">
+            <span class="back-pill-arrow">→</span>
+            <span>بازگشت به خانه</span>
         </a>
 
-    </div>
+        <!-- بخش تیترها -->
+        <div class="title-section-glass">
 
-    <div class="card">
+            <!-- لوگوی کتاب -->
+            <div class="poets-icon-wrapper">
+                <svg class="poets-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path fill="currentColor"
+                        d="M26.68 7.858a.6.6 0 0 0-.607-.083l-9.66 4.183c-.42.183-.946.27-1.486.27c-.753.003-1.532-.172-2.075-.41a2.5 2.5 0 0 1-.47-.26q.061-.03.145-.064l8.786-3.804l1.31.56V6.613a.78.78 0 0 0-.283-.612a.59.59 0 0 0-.605-.083l-9.66 4.183c-.298.12-.554.268-.77.483a1.33 1.33 0 0 0-.395.934c0 .01.003.027.003.027v14.73l-.002.02l.003.01v.016h.002c.02.515.28.843.528 1.075c.78.688 2.09 1.073 3.484 1.093c.66 0 1.33-.1 1.95-.366l9.663-4.184c.255-.11.422-.383.422-.692V8.47a.78.78 0 0 0-.283-.612m-6.127-2.8c-.017-.22-.108-.43-.27-.556a.6.6 0 0 0-.607-.083L10.016 8.6c-.42.182-.947.27-1.486.27c-.753.002-1.532-.173-2.075-.412a2.5 2.5 0 0 1-.47-.258q.061-.03.145-.064l8.787-3.804l1.31.56V3.257a.78.78 0 0 0-.284-.612a.6.6 0 0 0-.606-.083l-9.66 4.184c-.298.12-.553.267-.77.483a1.33 1.33 0 0 0-.394.934c0 .012.003.028.003.028v14.777h.002c.02.515.28.843.528 1.075c.78.688 2.09 1.072 3.485 1.092a5.6 5.6 0 0 0 1.127-.122V11.544c-.01-.7.27-1.372.762-1.856a3.5 3.5 0 0 1 1.19-.756z" />
+                </svg>
+            </div>
 
-        <div class="card-icon mono">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <circle cx="12" cy="6" r="4" fill="currentColor"/>
-                <circle cx="12" cy="18" r="4" fill="currentColor"/>
-                <circle cx="6" cy="12" r="4" fill="currentColor"/>
-                <circle cx="18" cy="12" r="4" fill="currentColor"/>
-                <circle cx="12" cy="12" r="3" fill="#fff"/>
-            </svg>
+            <div class="page-title-wrap">
+                <div class="p-title-flourish">
+                    <span class="p-line"></span>
+                    <span class="p-diamond">✦</span>
+                    <span class="p-line"></span>
+                </div>
+
+                <h1 class="page-title">گنجینه شاعران پارسی</h1>
+
+                <div class="p-title-flourish">
+                    <span class="p-line"></span>
+                    <span class="p-diamond">✦</span>
+                    <span class="p-line"></span>
+                </div>
+            </div>
+
+            <p class="page-subtitle">
+                شاعران فارسی را بر اساس دوره‌ی تاریخی آن‌ها مشاهده کنید
+            </p>
         </div>
 
-        <h3>شاعران معاصر</h3>
+        <!-- بخش کارت‌ها -->
+        <main>
+            <section class="menu-box">
+                <h2>دسته‌بندی شاعران</h2>
 
-        <p>
-            شاعران برجسته‌ی معاصر که نقش مهمی در ادبیات فارسی امروز داشته‌اند
-        </p>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-icon mono">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="2.2" fill="currentColor" />
+                                <rect x="4.5" y="6.5" width="2" height="12" fill="currentColor" />
+                                <rect x="8.5" y="6.5" width="2" height="12" fill="currentColor" />
+                                <rect x="12.5" y="6.5" width="2" height="12" fill="currentColor" />
+                                <rect x="16.5" y="6.5" width="2" height="12" fill="currentColor" />
+                                <rect x="2.5" y="19.5" width="19" height="2.2" fill="currentColor" />
+                            </svg>
+                        </div>
 
-        <a href="modern.html">
-            مشاهده فهرست
-        </a>
+                        <h3>شاعران کلاسیک</h3>
+                        <p>شاعران برجسته از آغاز ادبیات فارسی تا پایان دوره‌ی کلاسیک</p>
+                        <a href="classic.html">مشاهده فهرست</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-icon mono">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="4" fill="currentColor" />
+                                <circle cx="12" cy="18" r="4" fill="currentColor" />
+                                <circle cx="6" cy="12" r="4" fill="currentColor" />
+                                <circle cx="18" cy="12" r="4" fill="currentColor" />
+                                <circle cx="12" cy="12" r="3" fill="#fff" />
+                            </svg>
+                        </div>
+
+                        <h3>شاعران معاصر</h3>
+                        <p>شاعران برجسته‌ی معاصر که نقش مهمی در ادبیات فارسی امروز داشته‌اند</p>
+                        <a href="modern.html">مشاهده فهرست</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <hr>
+            <p>طراحی و توسعه: <strong>ریحانه زارع</strong></p>
+            <p>پروژه درس ادبیات فارسی | تابستان ۱۴۰۵</p>
+            <p>© تمامی حقوق این پروژه محفوظ است</p>
+        </footer>
 
     </div>
-
-</div>
-
-</section>
-
-</main>
-
-<footer>
-
-<hr>
-
-<p>
-طراحی و توسعه:
-<strong>ریحانه زارع</strong>
-</p>
-
-<p>
-پروژه درس ادبیات فارسی | تابستان ۱۴۰۵
-</p>
-
-<p>
-© تمامی حقوق این پروژه محفوظ است
-</p>
-
-</footer>
-
-</div>
 
 </body>
 

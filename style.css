@@ -179,7 +179,7 @@ footer p{
 }
 
 /* ==========================================
-   عناصر مشترک زیرصفحات (گنجینه شاعران و صفحات شاعر)
+   عناصر مشترک زیرصفحات (گنجینه، کلاسیک، معاصر و صفحات شاعر)
    ========================================== */
 
 .back-pill {
@@ -209,27 +209,49 @@ footer p{
     padding-top: 30px;
 }
 
+/* --- تزئینات تیتر اصلی (پیش‌فرض به صورت افقی/کنار تیتر) --- */
 .page-title-wrap {
     display: flex;
+    flex-direction: row !important; /* خطوط و الماس در کنار تیتر قرار می‌گیرند */
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 10px;
+    gap: 12px !important;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+/* فقط در صفحه گنجینه (poets.html)، تزئینات بالا و پایین باشد */
+.poets-page .page-title-wrap {
+    flex-direction: column !important;
+    gap: 2px !important;
 }
 
 .title-flourish {
-    flex: 0 0 auto;
-    width: 56px;
-    height: 14px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
     color: #C5A059;
-    opacity: .65;
+}
+
+.title-flourish .line {
+    width: 40px;
+    height: 1px;
+    background: #C5A059;
+    opacity: 0.6;
+}
+
+.title-flourish .diamond {
+    font-size: 14px;
 }
 
 .page-title {
     font-size: 26px;
     color: #1B2A4A;
     font-weight: 800;
-    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    white-space: nowrap !important; /* تیتر را به زور در یک خط نگه می‌دارد */
 }
 
 .page-subtitle {
@@ -240,7 +262,7 @@ footer p{
     margin: 0 auto;
 }
 
-/* فهرست شاعران (کلاسیک / معاصر) */
+/* --- فهرست شاعران --- */
 .poet-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -292,7 +314,19 @@ footer p{
     font-size: 15px;
 }
 
-/* صفحه‌ی اختصاصی هر شاعر */
+.poet-ornament {
+    color: #C5A059;
+    opacity: 0.5;  
+    font-size: 10px;
+    transition: opacity .3s, color .3s;
+}
+
+.poet-chip:hover .poet-ornament {
+    opacity: 1;
+    color: #8B6B2E;
+}
+
+/* --- صفحات اختصاصی هر شاعر --- */
 .poet-portrait-wrap {
     display: flex;
     justify-content: center;
@@ -383,19 +417,6 @@ footer p{
     text-align: center;
     margin-top: 10px;
 }
-
-.poet-ornament {
-    color: #C5A059;
-    opacity: 0.5;  
-    font-size: 10px;
-    transition: opacity .3s, color .3s;
-}
-
-.poet-chip:hover .poet-ornament {
-    opacity: 1;
-    color: #8B6B2E;
-}
-
 
 /* ==========================================
    تنظیمات اختصاصی موبایل
@@ -496,13 +517,19 @@ footer p{
     }
 
     .title-flourish {
-        width: 34px;
-        height: 10px;
+        width: auto; /* در موبایل سایز تزئینات کنترل شود */
     }
 
     .page-title-wrap {
-        gap: 8px;
+        gap: 6px !important;
         margin-bottom: 6px;
+    }
+
+    .title-flourish .line {
+        width: 20px; /* خطوط کوتاه‌تر در موبایل */
+    }
+    .title-flourish .diamond {
+        font-size: 11px;
     }
 
     .page-subtitle {
@@ -557,28 +584,75 @@ footer p{
         line-height: 1.9;
     }
     
-    /* استایل‌های اختصاصی موبایل برای صفحه شخصیت */
-    .personality-title {
-        font-size: 1.8rem;
+    /* تنظیمات موبایل صفحات شخصیت */
+    .personality-title { font-size: 1.8rem !important; }
+    .p-title-flourish .p-line { width: 20px !important; }
+    .white-action-card { padding: 20px 20px !important; }
+    .btn-start { padding: 10px 30px !important; font-size: 1rem !important; }
+    .personality-description p { font-size: 0.9rem !important; }
+}
+
+/* ==========================================
+   استایل‌های اختصاصی دکمه بازگشت و گنجینه (poets.html, classic.html, modern.html)
+   ========================================== */
+
+/* دکمه بازگشت شفاف و ظریف (سمت راست بالا) */
+.back-pill-top-home {
+    position: absolute !important;
+    top: 24px !important;
+    right: 24px !important;
+    left: auto !important;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    background: rgba(244, 234, 212, 0.35) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    border-radius: 20px !important;
+    padding: 6px 16px !important;
+
+    color: #1B2A4A !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    transition: all 0.25s ease-in-out !important;
+    z-index: 20 !important;
+}
+
+.back-pill-top-home:hover {
+    background: rgba(244, 234, 212, 0.7) !important;
+    border-color: rgba(197, 160, 89, 0.8) !important;
+    transform: translateX(-2px) !important;
+}
+
+/* آیکون کتاب در صفحات گنجینه */
+.poets-icon-wrapper .poets-icon,
+.poets-icon {
+    width: 52px;
+    height: 52px;
+    display: block;
+    margin-top:10px;
+}
+
+@media (max-width: 768px) {
+    .back-pill-top-home {
+        top: 16px !important;
+        right: 16px !important;
+        font-size: 11px !important;
+        padding: 4px 12px !important;
     }
-    .p-title-flourish .p-line {
-        width: 20px;
-    }
-    .white-action-card {
-        padding: 20px 20px;
-    }
-    .btn-start {
-        padding: 10px 30px;
-        font-size: 1rem;
-    }
-    .personality-description p {
-        font-size: 0.9rem;
+    .poets-icon-wrapper .poets-icon,
+    .poets-icon {
+        width: 30px !important;
+        height: 30px !important;
+        margin:auto;
     }
 }
 
-
 /* ==========================================
-   استایل‌های اختصاصی صفحه "هم‌روح کدام شاعری؟"
+   استایل‌های اختصاصی صفحه "هم‌روح کدام شاعری؟" (personality.html)
    ========================================== */
 
 .personality-page .personality-main {
@@ -601,57 +675,60 @@ footer p{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: -10px;
     transform: none !important;
 }
 
 .personality-icon {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
     display: block;
 }
 
 .personality-title-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 8px;
+    flex-direction: column !important;
+    gap: 2px !important;
+    width: 100%;
 }
 
 .p-title-flourish {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    width: 100% !important;
     color: #C5A059;
 }
 
 .p-title-flourish .p-line {
-    width: 40px;
-    height: 1px;
-    background: #C5A059;
-    opacity: 0.6;
+    width: 30px !important;
+    height: 0.9px !important;
+    background: #C5A059 !important;
+    opacity: 0.6 !important;
 }
 
 .p-title-flourish .p-diamond {
-    font-size: 14px;
+    font-size: 11px !important;
 }
 
 .personality-title {
     font-family: 'Vazirmatn', sans-serif;
     font-weight: 800;
-    font-size: 2.3rem;
+    font-size: 1.3rem;
     color: #1B2A4A;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
     margin: 0;
     text-shadow: 0 2px 12px rgba(255, 255, 255, 0.9);
 }
 
 .personality-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     color: #1B2A4A;
     font-weight: 400;
-    margin: 0;
+    margin-bottom: -20px;
+    margin-top: 6px;
     opacity: 0.85;
 }
 
@@ -675,27 +752,26 @@ footer p{
 }
 
 .personality-description p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #444;
     line-height: 1.8;
     text-align: center;
     margin-bottom: 15px;
 }
 
-/* باکس زمان در وسط */
 .personality-meta {
     background: #FBF6EB;
     padding: 10px 20px;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     color: #5A5047;
     display: flex;
     justify-content: center; 
-    align-items: center; /* آیتم‌ها را از نظر عمودی در یک خط تراز می‌کند */
+    align-items: center;
     gap: 10px;
     border: 1px solid rgba(197, 160, 89, 0.2);
-    margin: 0 auto; /* خود باکس را در وسط صفحه قرار می‌دهد */
-    width: fit-content; /* عرض باکس به اندازه محتوا تنظیم می‌شود */
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .meta-sep {
@@ -706,28 +782,29 @@ footer p{
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #C5A059;
-    color: #1B2A4A;
+    color: #C5A059;
+    background: #1B2A4A;
     text-decoration: none;
     padding: 12px 45px;
     border-radius: 50px;
     font-family: 'Vazirmatn', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 0.6rem;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
 }
 
 .btn-start:hover {
     background: #b08a47;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4);
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.5);
 }
 
 .btn-arrow {
     width: 20px;
     height: 20px;
 }
+
 /* ==========================================
    استایل‌های اختصاصی صفحه آزمون (test.html)
    ========================================== */
@@ -867,7 +944,6 @@ footer p{
     border-color: rgba(197, 160, 89, 0.3);
 }
 
-/* وقتی گزینه انتخاب شد، رنگش طلایی می‌شود */
 .test-option:has(input:checked) {
     background: #FBF6EB;
     border-color: #C5A059;
@@ -938,29 +1014,96 @@ footer p{
     width: 100%;
 }
 
-/* تنظیمات موبایل برای صفحه آزمون */
 @media (max-width: 768px) {
-    .test-title-wrap {
-        gap: 8px;
+    .test-title-wrap { gap: 8px; }
+    .test-flourish .t-line { width: 20px; }
+    .test-title { font-size: 1.8rem; }
+    .test-white-card { padding: 20px; }
+    .test-question h3 { font-size: 1rem; }
+    .test-option { font-size: 0.9rem; padding: 10px 12px; }
+    .btn-submit { padding: 10px 30px; font-size: 1rem; }
+}
+/* ===== دکمه بازگشت ===== */
+
+.personality-page{
+    position: relative;
+}
+
+.back-pill-top-home{
+    position:absolute;
+    top:28px;
+    right:32px;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:12px 24px;
+
+    background:linear-gradient(180deg,#faf2df,#f2dfbb);
+    border:1.5px solid #d8bb86;
+    border-radius:999px;
+
+    color:#24324b;
+    text-decoration:none;
+    font-family:"Vazirmatn",sans-serif;
+    font-size:.95rem;
+    font-weight:600;
+
+    box-shadow:
+        0 8px 18px rgba(176,145,92,.18),
+        inset 0 1px 0 rgba(255,255,255,.8);
+
+    transition:.3s;
+    z-index:100;
+}
+
+.back-pill-top-home:hover{
+    transform:translateY(-2px);
+    background:linear-gradient(180deg,#fdf6e8,#f5e4c1);
+    box-shadow:
+        0 12px 24px rgba(176,145,92,.25),
+        inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.back-pill-top-home svg{
+    width:18px;
+    height:18px;
+    color:#8f6a2b;
+    transition:.25s;
+}
+
+.back-pill-top-home:hover svg{
+    transform:translateX(4px);
+}
+
+@media (max-width:768px){
+
+    .back-pill-top-home{
+        top:18px;
+        right:18px;
+        padding:9px 18px;
+        font-size:.78rem;
     }
-    .test-flourish .t-line {
-        width: 20px;
+
+    .back-pill-top-home svg{
+        width:16px;
+        height:16px;
     }
-    .test-title {
-        font-size: 1.8rem;
+}
+@media (min-width:1200px){
+
+    .personality-main h1{
+        font-size: 2.1rem;
     }
-    .test-white-card {
-        padding: 20px;
+
+    .personality-main p{
+        font-size:1rem;
     }
-    .test-question h3 {
-        font-size: 1rem;
+
+    .personality-main button{
+        font-size:1.1rem;
+        padding:16px 38px;
     }
-    .test-option {
-        font-size: 0.9rem;
-        padding: 10px 12px;
-    }
-    .btn-submit {
-        padding: 10px 30px;
-        font-size: 1rem;
-    }
+
 }

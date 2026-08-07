@@ -1,95 +1,266 @@
 <!DOCTYPE html>
-<html lang="fa">
-
+<html lang="fa" dir="rtl">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اگر شاعران امروز بودند...</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .today-page .container { position: relative !important; padding-top: 40px !important; padding-bottom: 30px !important; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        .today-logo-wrapper { display: flex; justify-content: center; margin-bottom: 10px; }
+        .today-logo { width: 56px; height: 56px; color: #C5A059; display: block; }
 
-<title>اگر شاعران امروز بودند...</title>
-<link rel="stylesheet" href="style.css">
+        .back-pill-top-home {
+            position: absolute !important;
+            top: 24px !important;
+            right: 24px !important;
+            left: auto !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            background: rgba(253, 250, 245, 0.8) !important;
+            border: 1px solid rgba(197, 160, 89, 0.4) !important;
+            border-radius: 30px !important;
+            padding: 6px 16px !important;
+            color: #1B2A4A !important;
+            text-decoration: none !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+            z-index: 20 !important;
+        }
+        .back-pill-top-home:hover {
+            background: #F4EAD4 !important;
+            border-color: #C5A059 !important;
+            transform: translateX(-3px) !important;
+        }
+        .back-pill-arrow { font-size: 14px; line-height: 1; display: inline-block; }
 
+        .today-list-view { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 800px; margin: 0 auto; }
+        .poet-selection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; margin-top: 20px; }
+        
+        .poet-select-btn {
+            background: #ffffff; border: 1px solid #EFE6D8; border-radius: 14px; padding: 14px 6px;
+            font-family: 'Vazirmatn', sans-serif; font-weight: 600; font-size: 14px; color: #1B2A4A;
+            cursor: pointer; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        /* آیکون دو ستاره شبیه به تزئینات تیتر */
+        .poet-select-btn svg { width: 20px; height: 20px; color: #C5A059; flex-shrink: 0; }
+        .poet-select-btn:hover { transform: translateY(-3px); border-color: #C5A059; background: #FBF6EB; box-shadow: 0 6px 16px rgba(197, 160, 89, 0.2); }
+
+        .today-detail-view { display: none; flex-direction: column; align-items: center; width: 100%; max-width: 800px; margin: 0 auto; }
+        .today-white-card { background: #ffffff; border-radius: 30px; padding: 40px; width: 100%; border: 1px solid #EFE6D8; display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 15px; text-align: center; box-shadow: 0 10px 30px rgba(27, 42, 74, 0.08); }
+        .detail-poet-title { font-family: 'Vazirmatn', sans-serif; font-weight: 800; font-size: 1.8rem; color: #1B2A4A; margin: 0; }
+        .detail-poet-desc { font-size: 1rem; color: #444; line-height: 2; text-align: center; max-width: 600px; }
+        .detail-tag { display: inline-block; background: #FBF6EB; padding: 6px 18px; border-radius: 50px; font-size: 0.9rem; color: #1B2A4A; border: 1px solid rgba(197, 160, 89, 0.15); margin-top: 5px; }
+
+        .back-list-btn { display: inline-flex; align-items: center; gap: 6px; background: #F4EAD4; border: 1px solid rgba(197, 160, 89, 0.4); border-radius: 20px; padding: 6px 16px; color: #1B2A4A; text-decoration: none; font-size: 13px; font-weight: 500; transition: .3s; margin-bottom: 15px; }
+        .back-list-btn:hover { background: #C5A059; color: #fff; }
+
+        @media (max-width: 768px) {
+            .today-page .container { padding: 50px 15px 20px 15px !important; }
+            .back-pill-top-home { top: 15px !important; right: 15px !important; font-size: 11px !important; padding: 4px 10px !important; }
+            .poet-selection-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .poet-select-btn { font-size: 12px; padding: 12px 4px; }
+            .today-white-card { padding: 20px 15px; }
+            .detail-poet-title { font-size: 1.4rem; }
+            .detail-poet-desc { font-size: 0.9rem; }
+            .today-logo { width: 40px; height: 40px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+<div class="container today-page">
 
-<h1>📱 اگر شاعران امروز بودند...</h1>
+    <!-- دکمه بازگشت به خانه -->
+    <a href="index.html" class="back-pill-top-home">
+        <span class="back-pill-arrow">←</span>
+        <span>بازگشت به خانه</span>
+    </a>
 
-<p>
-اگر شاعران بزرگ فارسی در زمان ما زندگی می‌کردند، احتمالاً چه شغلی داشتند؟
-</p>
+    <!-- تیتر و لوگو -->
+    <div class="title-section-glass">
+        <div class="today-logo-wrapper">
+            <svg class="today-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>
+            </svg>
+        </div>
+        <div class="page-title-wrap" style="flex-direction: column !important;">
+            <div class="title-flourish"><span class="line"></span><span class="diamond">✦</span><span class="line"></span></div>
+            <h1 class="page-title">اگر شاعران امروز بودند...</h1>
+            <div class="title-flourish"><span class="line"></span><span class="diamond">✦</span><span class="line"></span></div>
+        </div>
+        <p class="page-subtitle" style="margin-top: 8px;">اگر شاعران بزرگ فارسی در زمان ما زندگی می‌کردند، احتمالاً چه شغلی داشتند؟</p>
+    </div>
 
-<hr>
+    <!-- لیست شاعران (با دو ستاره طلایی شبیه به ✨) -->
+    <div id="listView" class="today-list-view">
+        <section class="menu-box" style="width: 100%;"><h2>فهرست شاعران</h2></section>
+        <div class="poet-selection-grid" id="poetGrid">
+            
+            <a href="?poet=molana" class="poet-select-btn">
+                <!-- دو ستاره یکی بزرگ بالاتر، یکی کوچک پایین‌تر -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> مولانا
+            </a>
+            
+            <a href="?poet=hafez" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> حافظ
+            </a>
+            
+            <a href="?poet=ferdowsi" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> فردوسی
+            </a>
+            
+            <a href="?poet=saadi" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> سعدی
+            </a>
+            
+            <a href="?poet=khayyam" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> خیام
+            </a>
+            
+            <a href="?poet=sohrab" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> سهراب سپهری
+            </a>
+            
+            <a href="?poet=forough" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> فروغ فرخزاد
+            </a>
+            
+            <a href="?poet=nima" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> نیما یوشیج
+            </a>
+            
+            <a href="?poet=shahriar" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> شهریار
+            </a>
+            
+            <a href="?poet=parvin" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> پروین اعتصامی
+            </a>
+            
+            <a href="?poet=bidel" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> بیدل دهلوی
+            </a>
+            
+            <a href="?poet=saeb" class="poet-select-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="16 4,18 9,23 10,18 11,16 16,14 11,9 10,14 9" fill="currentColor"/>
+                    <polygon points="6 14,7 17,10 18,7 19,6 22,5 19,2 18,5 17" fill="currentColor"/>
+                </svg> صائب تبریزی
+            </a>
+            
+        </div>
+    </div>
 
-</header>
+    <!-- جزئیات شاعر -->
+    <div id="detailView" class="today-detail-view">
+        <a href="today.html" class="back-list-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            بازگشت به فهرست شاعران
+        </a>
+        <div class="today-white-card">
+            <h2 class="detail-poet-title" id="detailTitle">عنوان شاعر</h2>
+            <div class="detail-poet-desc" id="detailDesc"></div>
+        </div>
+    </div>
 
-<main>
+    <footer style="margin-top:30px;">
+        <hr>
+        <p>طراحی و توسعه: <strong>ریحانه زارع</strong></p>
+        <p>پروژه درس ادبیات فارسی | تابستان ۱۴۰۵</p>
+        <p>© تمامی حقوق این پروژه محفوظ است.</p>
+    </footer>
+</div>
 
-<section>
+<script>
+    const poets = {
+      molana: { title: "اگر مولانا امروز بود...", job: "🧘 لایف‌کوچ، مدرس خودشناسی و پادکستر", bio: "«هر روز نسخه‌ی بهتری از خودت شو؛ باقی راه خودش پیدا می‌شود.» ✨", description: "احتمالاً یکی از معروف‌ترین سخنران‌های انگیزشی دنیا بود. پادکست داشت، دوره‌های خودشناسی برگزار می‌کرد و میلیون‌ها نفر از حرف‌هایش الهام می‌گرفتند." },
+      hafez: { title: "اگر حافظ امروز بود...", job: "📖 شاعر، نویسنده و اینفلوئنسر ادبی", bio: "«گاهی یک بیت، تمام حرف دل آدم را می‌زند...» 🍃", description: "احتمالاً هر شب لایو شعرخوانی برگزار می‌کرد، فال حافظ آنلاین داشت و جمله‌هایش مدام در شبکه‌های اجتماعی وایرال می‌شد." },
+      ferdowsi: { title: "اگر فردوسی امروز بود...", job: "⚔️ نویسنده رمان‌های تاریخی و مشاور فیلم‌های حماسی", bio: "«ایران را باید با فرهنگش زنده نگه داشت.» 🇮🇷", description: "شاید نویسنده پرفروش‌ترین رمان‌های تاریخی می‌شد و در ساخت فیلم‌ها و بازی‌های حماسی همکاری می‌کرد." },
+      saadi: { title: "اگر سعدی امروز بود...", job: "🤝 فعال اجتماعی، استاد دانشگاه و نویسنده", bio: "«هنوز هم بنی‌آدم اعضای یک پیکرند...» ❤️", description: "احتمالاً درباره روابط انسانی، اخلاق و مهارت‌های زندگی کتاب می‌نوشت و سخنرانی‌های اجتماعی برگزار می‌کرد." },
+      khayyam: { title: "اگر خیام امروز بود...", job: "🔭 دانشمند، برنامه‌نویس و پژوهشگر نجوم", bio: "«سؤال خوب، از هزار پاسخ ارزشمندتر است.» 🌌", description: "بین هوش مصنوعی، ریاضیات و نجوم زندگی می‌کرد و احتمالاً همیشه در حال ساختن پروژه‌های علمی جدید بود." },
+      forough: { title: "اگر فروغ امروز بود...", job: "🎬 کارگردان، نویسنده و عکاس", bio: "«دنیا را باید از زاویه‌ای تازه دید.» 🎥", description: "فیلم‌های مستقل می‌ساخت، کتاب منتشر می‌کرد و با نگاه متفاوتش الهام‌بخش نسل جوان بود." },
+      sohrab: { title: "اگر سهراب سپهری امروز بود...", job: "🌿 عکاس طبیعت، نقاش و جهانگرد", bio: "«چشم‌ها را باید شست، جور دیگر باید دید.» 🍃", description: "صفحه‌اش پر از عکس‌های طبیعت، نقاشی و سفر بود و مردم را به آرامش و دیدن زیبایی‌های ساده دعوت می‌کرد." },
+      nima: { title: "اگر نیما یوشیج امروز بود...", job: "🖋️ نویسنده و بنیان‌گذار مجله ادبی آنلاین", bio: "«اگر قرار است چیزی تغییر کند، از فکر شروع می‌شود.» 💡", description: "همیشه در حال شکستن کلیشه‌ها بود و از استعدادهای جوان حمایت می‌کرد." },
+      shahriar: { title: "اگر شهریار امروز بود...", job: "🎼 ترانه‌سرا و خواننده", bio: "«گاهی یک ترانه، از هزار سخن ماندگارتر است.» 🎵", description: "احتمالاً شعرهایش به مشهورترین آهنگ‌های روز تبدیل می‌شد و کنسرت‌های پرطرفداری برگزار می‌کرد." },
+      parvin: { title: "اگر پروین اعتصامی امروز بود...", job: "📚 استاد دانشگاه و فعال فرهنگی", bio: "«دانایی زمانی ارزش دارد که به انسانیت خدمت کند.» 🌸", description: "در حوزه آموزش، عدالت اجتماعی و توانمندسازی نوجوانان فعالیت می‌کرد." },
+      bidel: { title: "اگر بیدل امروز بود...", job: "💭 فیلسوف و نویسنده", bio: "«پشت هر سؤال، جهانی از معنا پنهان است.» 🧩", description: "کتاب‌های فلسفی می‌نوشت و احتمالاً کانال یا پادکستی درباره تفکر عمیق داشت." },
+      saeb: { title: "اگر صائب تبریزی امروز بود...", job: "✒️ نویسنده و بلاگر ادبی", bio: "«نگاه تازه، آغاز هر تغییر است.» 🌱", description: "هر روز یک جمله ناب منتشر می‌کرد که به سرعت بین کاربران دست‌به‌دست می‌شد." }
+    };
 
-<h2>یکی از شاعران را انتخاب کن 👇</h2>
+    function handleRouting() {
+        const params = new URLSearchParams(window.location.search);
+        const poetId = params.get('poet');
+        const listView = document.getElementById('listView');
+        const detailView = document.getElementById('detailView');
 
-<button onclick="showPoet('molana')">🧠 مولانا</button>
-<button onclick="showPoet('hafez')">🍷 حافظ</button>
-<button onclick="showPoet('ferdowsi')">⚔️ فردوسی</button>
-<button onclick="showPoet('saadi')">🤝 سعدی</button>
+        if (poetId && poets[poetId]) {
+            listView.style.display = 'none';
+            detailView.style.display = 'flex';
+            const poet = poets[poetId];
+            document.getElementById('detailTitle').innerHTML = poet.title;
+            document.getElementById('detailDesc').innerHTML = `
+                <div class="detail-tag" style="margin-bottom: 10px;"><strong>💼 شغل احتمالی:</strong><br> ${poet.job}</div>
+                <br>
+                <strong>📝 بیو:</strong><br> ${poet.bio}
+                <br><br>
+                <strong>✨ توضیح:</strong><br> ${poet.description}
+            `;
+        } else {
+            listView.style.display = 'flex';
+            detailView.style.display = 'none';
+        }
+    }
 
-<br><br>
-
-<button onclick="showPoet('khayyam')">🔭 خیام</button>
-<button onclick="showPoet('sohrab')">🌿 سهراب سپهری</button>
-<button onclick="showPoet('forough')">🎬 فروغ فرخزاد</button>
-<button onclick="showPoet('nima')">🖋️ نیما یوشیج</button>
-
-<br><br>
-
-<button onclick="showPoet('shahriar')">🎼 شهریار</button>
-<button onclick="showPoet('parvin')">📚 پروین اعتصامی</button>
-<button onclick="showPoet('bidel')">💭 بیدل دهلوی</button>
-<button onclick="showPoet('saeb')">✒️ صائب تبریزی</button>
-
-</section>
-
-<hr>
-
-<section>
-
-<h2 id="title">
-یکی از شاعران را انتخاب کن
-</h2>
-
-<p id="description">
-
-بعد از انتخاب هر شاعر، شغل احتمالی و توضیح مربوط به او اینجا نمایش داده می‌شود.
-
-</p>
-
-</section>
-
-</main>
-
-<footer>
-
-<hr>
-
-<p>
-طراحی و توسعه: <strong>ریحانه زارع</strong>
-</p>
-
-<p>
-پروژه درس ادبیات فارسی | تابستان ۱۴۰۵
-</p>
-
-<p>
-© تمامی حقوق این پروژه محفوظ است.
-</p>
-
-</footer>
-
-<script src="today.js"></script>
+    window.addEventListener('DOMContentLoaded', handleRouting);
+    document.querySelector('.back-list-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.history.pushState({}, '', window.location.pathname);
+        handleRouting();
+    });
+</script>
 
 </body>
-
 </html>
