@@ -29,10 +29,12 @@ Inspired by the elegance of **Persian miniature art** and traditional Iranian ae
 The main goal of this project is to transform Persian literature from a collection of historical texts into an interactive journey where users can explore poets, discover their personalities, and build a deeper connection with Persian culture and literature.
 
 ---
-## 🌐 مشاهده نسخه آنلاین پروژه
+
+#### 🌐 Live Demo
+
+You can view the live version of the project here:
 
 🔗 https://parvazdevrz.github.io/Dar-Kooye-Sokhan/
-
 
 ---
 
